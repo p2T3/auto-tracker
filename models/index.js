@@ -10,4 +10,12 @@ Auto.belongsTo(Driver, {
     foreignKey: 'auto_id'
 })
 
+Owner.hasMany (Auto, {
+    foreignKey: 'owner_id'
+})
+
+Driver.hasMany (Auto, {
+    foreignKey: 'driver_id'
+})
+
 module.exports = { Auto, Owner, Driver };
