@@ -69,6 +69,31 @@ router.post('/', (req, res) => {
         });
 })
 
+router.put('/:id', (req, res) => {
+    Owner.update({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            email: req.body.email,
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbOwnerData => {
+            if (!dbOwnerData) {
+                res.status(404).json({
+                    message: 'No owner found with this id!'
+                });
+                return;
+            }
+            res.json(dbOwnerData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
+
 router.delete('/:id', (req, res) => {
     Owner.destroy({
             where: {
