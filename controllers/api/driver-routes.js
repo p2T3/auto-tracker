@@ -1,5 +1,9 @@
 const router = require('express').Router();
-const { Owner, Auto, Driver } = require('../../models');
+const {
+    Owner,
+    Auto,
+    Driver
+} = require('../../models');
 
 router.get('/', (req, res) => {
     Driver.findAll({
@@ -30,7 +34,7 @@ router.get('/:id', (req, res) => {
         .then(dbDriverData => {
             if (!dbDriverData) {
                 res.status(404).json({
-                    message: 'No Driver found with this id'
+                    message: 'No driver found with this id!'
                 });
                 return;
             }
@@ -60,6 +64,31 @@ router.post('/', (req, res) => {
             //     res.json(dbDriverData);
             // });
 
+            res.json(dbDriverData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
+
+router.put('/:id', (req, res) => {
+    Driver.update({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            relation: req.body.relation,
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(dbDriverData => {
+            if (!dbDriverData) {
+                res.status(404).json({
+                    message: 'No driver found with this id!'
+                });
+                return;
+            }
             res.json(dbDriverData);
         })
         .catch(err => {

@@ -1,7 +1,4 @@
-const {
-  Model,
-  DataTypes
-} = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Auto extends Model {}
@@ -56,6 +53,10 @@ Auto.init({
   license_plate: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  toll_tag: {
+    type: DataTypes.STRING,
+    allowNull: true,
   },
   registration_expiration: {
     type: DataTypes.DATEONLY,
