@@ -39,6 +39,10 @@ Auto.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    toll_tag: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     registration_expiration: {
       type: DataTypes.DATEONLY,
       allowNull: false,
