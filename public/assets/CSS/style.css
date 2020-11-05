@@ -15,10 +15,14 @@ body {
   color: white;
 }
 
-.nav {
+.nav-item {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
+}
+
+.nav-item:hover {
+    color: grey;
 }
 
 .login-form,
@@ -62,20 +66,8 @@ input:focus {
   box-shadow: 0 0 0 0 !important;
 }
 
-.start-btn {
+.start-btn, .login-btn {
   width: 100%;
-}
-
-.login-btn {
-  color: black;
-  background-color: #4d4ae6;
-  width: 100px;
-}
-
-.login-btn:hover,
-.start-btn:hover {
-  color: black;
-  background-color: white;
 }
 
 .signup-btn {
