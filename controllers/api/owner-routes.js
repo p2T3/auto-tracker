@@ -1,9 +1,5 @@
 const router = require("express").Router();
-const {
-    Owner,
-    Auto,
-    Driver
-} = require("../../models");
+const { Owner, Auto, Driver } = require("../../models");
 
 router.get('/', (req, res) => {
     Owner.findAll({
