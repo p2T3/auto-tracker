@@ -40,6 +40,9 @@ body {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+header{
+    color: white;
+}
 .card-header h3 {
   color: white;
   text-align: center;
