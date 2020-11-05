@@ -20,27 +20,40 @@
             <h1 class="">AUTO TRACKER</h1>
             <a class="nav flex-sm-fill text-sm-center nav-link" href="#">Home</a>
             <a class="nav flex-sm-fill text-sm-center nav-link" href="#">Dashboard</a>
-            <a class="nav flex-sm-fill text-sm-center nav-link" href="#">Login</a>
+            <!-- <a class="nav flex-sm-fill text-sm-center nav-link" href="#">Login</a> -->
         </nav>
     </header>
-    <div class="container intro-form">
+
+    <div class="container login-form">
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <h3>Welcome!</h3>
-                    <p>This is your personal automobile information tracking system. <br><br>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatibus eveniet et voluptas
-                        reprehenderit quae excepturi, suscipit itaque, perferendis laudantium tenetur earum provident
-                        minus quam assumenda possimus minima dignissimos maxime.
-                    </p>
+                    <h3>Login</h3>
                 </div>
                 <div class="card-body">
-                    <button class="btn btn-dark btn-lg btn-rounded btn-elegant start-btn">Get Started</button>
+                    <form>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Username">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-left login-btn">
+                            <a class="signup-btn float-right" href="/signup">Sign up instead</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
