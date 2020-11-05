@@ -19,6 +19,13 @@ Driver.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    auto_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "auto",
+        key: "id",
+      },
+    },
     relation: {
       type: DataTypes.STRING,
       allowNull: false,
