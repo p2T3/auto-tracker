@@ -7,7 +7,7 @@ Auto.belongsTo(Owner, {
 })
 
 Auto.belongsTo(Driver, {
-    foreignKey: 'auto_id'
+    foreignKey: 'driver_id'
 })
 
 Owner.hasMany (Auto, {
