@@ -13,5 +13,8 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
+router.get("/vehicle-dashboard", (req, res) => {
+  res.render("vehicle-dashboard");
+});
 
 module.exports = router;
