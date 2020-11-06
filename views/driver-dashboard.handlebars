@@ -20,21 +20,28 @@
         </div>
     </nav>
 </header>
+
+
 <div class="d-flex justify-content-md-center">
     <button class="btn btn-dark btn-lg btn-rounded btn-elegant  add-vehicle">+ Add Driver</button>
 </div>
 
 <div class="container card-form">
     <div class="row d-flex justify-content-md-center h-100">
+        {{#each this}}
+        {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card ">
             <div class="card-header">
-                <H2>Driver 1</H2>
+                <H2>Driver: {{this.driver.id}}</H2>
+                <h3>Name: {{this.driver.first_name}} {{this.driver.last_name}}</h3>
             </div>
             <div class="card-body">
                 <img src="https://via.placeholder.com/150" alt="">
-                <h4>Vehicle: content</h4>
-                <h4>Relation: content</h4>
+                <h4>Vehicle: {{this.make}} {{this.model}}</h4>
+                <h4>Relation: {{this.driver.relation}}</h4>
             </div>
         </div>
+        {{/if}}
+        {{/each}}
     </div>
 </div>
