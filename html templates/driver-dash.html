@@ -11,49 +11,40 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
-        <link rel="stylesheet" href="../public/stylesheet/style.css" />
-
-
+    <link rel="stylesheet" href="../public/stylesheet/style.css" />
 </head>
 
 <body>
     <header>
         <nav class="nav nav-pills flex-column flex-sm-row">
-            <h1>AUTO TRACKER</h1>
-            <a class="nav-item flex-sm-fill text-sm-center nav-link" href="#">Home</a>
-            <a class="nav-item flex-sm-fill text-sm-center nav-link" href="/signup">Sign up</a>
+            <h1>Driver Dashboard</h1>
+            <!-- <a class="nav-item flex-sm-fill text-sm-center nav-link" href="#">Home</a> -->
+            <a class="nav-item flex-sm-fill text-sm-center nav-link" href="#">Vehicle Dashboard</a>
+            <a class="nav-item flex-sm-fill text-sm-center justify-content-end nav-link" href="#">Logout</a>
         </nav>
     </header>
+    
+    <div class="d-flex justify-content-md-center">
+        <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle">+ Add Driver</button>
+    </div>
 
     <div class="container card-form">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
+        <div class="row d-flex justify-content-md-center h-100">
+            <div class="col-sm-4 m-4 align-items-center card ">
                 <div class="card-header">
-                    <h3>Login</h3>
+                    <H2>Car 1</H2>
                 </div>
                 <div class="card-body">
-                    <form>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Email">
-
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="password" class="form-control" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-dark btn-lg btn-rounded btn-elegant login-btn">Login</button>
-                        </div>
-                    </form>
+                    <img src="https://via.placeholder.com/150" alt="">
+                    <h4>Make: content</h4>
+                    <h4>Model: content</h4>
+                    <h4>Year: content</h4>
+                    <h4>Driver: content</h4>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
