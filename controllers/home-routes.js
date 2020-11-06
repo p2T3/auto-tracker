@@ -13,9 +13,9 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
-router.get("/vehicle", (req, res) => {
-  res.render("vehicle-dashboard");
-});
+// router.get("/vehicle", (req, res) => {
+//   res.render("vehicle-dashboard");
+// });
 router.get("/driver", (req, res) => {
   res.render("driver-dashboard");
 });
