@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(../../../assets/images/auto-tracker-homepage.jpg);
+  background-image: url(../assets/images/auto-tracker-homepage.jpg);
   background-size: cover;
   background-position: 80%;
   background-attachment: fixed;
@@ -30,7 +30,7 @@ body {
   color: white;
   display: block;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 4rem;
 }
 
 .container {
