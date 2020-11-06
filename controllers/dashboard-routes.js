@@ -13,16 +13,16 @@ router.get("/vehicle", (req, res) => {
     attributes: {
       exclude: ["createdAt", "updatedAt"],
     },
-    // include: [
-    //   // {
-    //   //   model: Owner,
-    //   //   attributes: ["id", "first_name", "last_name", "email"],
-    //   // },
-    //   {
-    //     model: Driver,
-    //     attributes: ["id", "first_name", "last_name", "relation"],
-    //   },
-    // ],
+    include: [
+      // {
+      //   model: Owner,
+      //   attributes: ["id", "first_name", "last_name", "email"],
+      // },
+      {
+        model: Driver,
+        attributes: ["id", "first_name", "last_name", "relation"],
+      },
+    ],
   })
   .then(dbAutoData => {
     console.log( "dbAutoData:", dbAutoData );
