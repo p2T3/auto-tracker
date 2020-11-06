@@ -25,6 +25,26 @@ body {
   color: grey;
 }
 
+.nav-header:hover {
+  color: inherit;
+}
+
+.navbar-toggler {
+  width: 40px;
+  height: 30px;
+  background-color: white;
+  border: none;
+  opacity: 85%;
+}
+
+.navbar-toggler .line {
+  width: 100%;
+  float: left;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 5px;
+}
+
 .card-form {
   color: white;
   display: block;
@@ -51,6 +71,7 @@ header {
 
 .add-vehicle {
   margin-top: 2rem;
+  width: 25%;
 }
 
 .card-header h3 {
@@ -88,5 +109,9 @@ input:focus {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: black;
+  }
+
+  .add-vehicle {
+    width: 100%;
   }
 }

@@ -1,28 +1,54 @@
+ 
+
+
 <header>
-    <nav class="nav nav-pills flex-column flex-sm-row">
-        <h1>Vehicle Dashboard</h1>
-        <a class="nav-item flex-sm-fill text-sm-center nav-link" href="/driver">Driver Dashboard</a>
-        <a class="nav-item flex-sm-fill text-sm-center justify-content-end nav-link" href="/homepage">Logout</a>
+    <nav class="navbar navbar-expand-sm nav nav-pills flex-column flex-sm-row">
+        <div class="container">
+            <h1 class="nav-header nav-item navbar-brand " href="#">VEHICLE DASHBOARD</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav nav nav-fill w-100">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="/driver">Driver Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="/#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
+
 <div class="d-flex justify-content-md-center">
-    <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle">+ Add Vehicle</button>
+    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle">+ Add Vehicle</button>
 </div>
 
+
 <div class="container card-form">
+
     <div class="row d-flex justify-content-md-center h-100">
+        {{#each this}}
+        {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card ">
             <div class="card-header">
-                <H2>Car 1</H2>
+                <H2>Vehicle: {{this.id}}</H2>
             </div>
             <div class="card-body">
                 <img src="https://via.placeholder.com/150" alt="">
-                <h4>Make: content</h4>
-                <h4>Model: content</h4>
-                <h4>Year: content</h4>
-                <h4>Driver: content</h4>
+                <h4>Make: {{this.make}}</h4>
+                <h4>Model: {{this.model}}</h4>
+                <h4>Year: {{this.year}}</h4>
+                {{!-- <h4>Driver: {{first_name last_name}} by {{auto.driver_id}}</h4>  --}}
             </div>
         </div>
+        {{/if}}
+        {{/each}}
     </div>
+
 </div>
