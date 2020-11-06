@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../../../assets/images/auto-tracker-homepage.jpg);
+  background-size: cover;
+  background-position: 80%;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.5;
+  font-size: 20px;
+  color: white;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.nav-item:hover {
+    color: grey;
+}
+
+.login-form,
+.intro-form {
+  color: white;
+  display: block;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.container {
+  height: 100%;
+  align-content: center;
+}
+
+.card {
+  height: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+header {
+  color: white;
+}
+.card-header h3 {
+  color: white;
+  text-align: center;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: white;
+  color: black;
+  border: 0 !important;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.start-btn, .login-btn {
+  width: 100%;
+}
+
+.signup-btn {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
