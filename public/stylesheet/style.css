@@ -48,6 +48,11 @@ body {
 header {
   color: white;
 }
+
+h3 {
+  margin-top: 2rem;
+}
+
 .card-header h3 {
   color: white;
   text-align: center;
