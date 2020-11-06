@@ -22,7 +22,7 @@ body {
 }
 
 .nav-item:hover {
-    color: grey;
+  color: grey;
 }
 
 .login-form,
@@ -66,7 +66,8 @@ input:focus {
   box-shadow: 0 0 0 0 !important;
 }
 
-.start-btn, .login-btn {
+.start-btn,
+.login-btn {
   width: 100%;
 }
 
@@ -74,4 +75,14 @@ input:focus {
   text-decoration: none;
   color: white;
   padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-position: 80%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: black;
+  }
 }
