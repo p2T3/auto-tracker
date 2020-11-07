@@ -1,6 +1,3 @@
- 
-
-
 <header>
     <nav class="navbar navbar-expand-sm nav nav-pills flex-column flex-sm-row">
         <div class="container">
@@ -26,7 +23,8 @@
 
 
 <div class="d-flex justify-content-md-center">
-    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle">+ Add Vehicle</button>
+    <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle" data-toggle="modal"
+        data-target="#add-auto-modal">+ Add Vehicle</button>
 </div>
 
 {{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -35,8 +33,10 @@
 
     <div class="row d-flex justify-content-md-center h-100">
         {{#each this}}
+        {{log this }}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-center card ">
+        <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
+            data-target="#view-auto-modal">
             <div class="card-header">
                 <H2>Vehicle: {{this.id}}</H2>
             </div>
@@ -45,11 +45,112 @@
                 <h4>Make: {{this.make}}</h4>
                 <h4>Model: {{this.model}}</h4>
                 <h4>Year: {{this.year}}</h4>
-                <h4>Driver: {{this.driver.first_name}} {{this.driver.last_name}} </h4> 
+                <h4>Driver: {{this.driver.first_name}} {{this.driver.last_name}} </h4>
+            </div>
+        </div>
+
+        {{!-- ////////////////////////////////////////////////////////////////////////////// --}}
+        {{!-- <!--  Add the setup for the 'vehicle modal'  --> --}}
+
+        <div class="modal fade" id="view-auto-modal" tabindex="-1" role="dialog" aria-labelledby="view-auto-modal-title"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content card-color">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="view-auto-modal-title">Vehicle {{this.id}}</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-md-6 ml-auto">
+
+                                    <img src="https://via.placeholder.com/200" alt="">
+                                    <h4>Make: {{this.make}}</h4>
+                                    <h4>Model: {{this.model}}</h4>
+                                    <h4>Year: {{this.year}}</h4>
+                                    <h4>Color: {{this.color}}</h4>
+
+                                </div>
+                                <div class="col-md-6 ml-auto">
+                                    <h4>VIN: {{this.vin}}</h4>
+                                    <h4>License Plate: {{this.vin}}</h4>
+                                    <h4>TollTag Number: {{this.vin}}</h4>
+                                    <h4>Insurance Expiration: {{this.vin}}</h4>
+                                    <h4>Registration Expiration: {{this.vin}}</h4>
+                                    <h4>Purchase Mileage: {{this.vin}}</h4>
+                                    <h4>Oil Change Mileage: {{this.vin}}</h4>
+                                    <h4>Tire Change Mileage: {{this.vin}}</h4>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
         {{/if}}
         {{/each}}
     </div>
 
+</div>
+
+
+{{!-- 
+    <!-- Modal For Adding a Car--> --}}
+<div class="modal fade" id="add-auto-modal" tabindex="-1" role="dialog" aria-labelledby="add-auto-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content card-color">
+            <div class="modal-header">
+                <h1 class="modal-title" id="add-auto-modal-title">Add Vehicle</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <form action="">
+                            <label for="make">Make:</label><br>
+                            <input type="text" id="make" name="make" value=""><br>
+                            <label for="model">Model:</label><br>
+                            <input type="text" id="model" name="model" value=""><br>
+                            <label for="year">Year:</label><br>
+                            <input type="text" id="year" name="year" value=""><br>
+                            <label for="color">Color:</label><br>
+                            <input type="text" id="color" name="color" value=""><br>
+                            <label for="vin">VIN:</label><br>
+                            <input type="text" id="vin" name="vin" value=""><br>
+                            <label for="license-plate">License Plate:</label><br>
+                            <input type="text" id="license-plate" name="license-plate" value=""><br>
+                            <label for="tolltag-number">TollTag Number:</label><br>
+                            <input type="text" id="tolltag-number" name="tolltag-number" value=""><br>
+                            <label for="insurance-expiration">Insurance Expiration:</label><br>
+                            <input type="text" id="insurance-expiration" name="insurance-expiration" value=""><br>
+                            <label for="color">Registration Expiration:</label><br>
+                            <input type="text" id="registration-expiration" name="registration-expiration" value=""><br>
+                            <label for="color">Purchase Mileage:</label><br>
+                            <input type="text" id=purchase-mileage name="purchase-mileage" value=""><br>
+                            <label for="color">Oil Change Mileage:</label><br>
+                            <input type="text" id="oil-change-mileage" name="oil-change-mileage" value=""><br>
+                            <label for="color">Tire Change Mileage: </label><br>
+                            <input type="text" id="tire-change-mileage" name="tire-change-mileage" value="">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
 </div>
