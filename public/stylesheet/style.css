@@ -79,6 +79,10 @@ header {
   text-align: center;
 }
 
+.card-cursor:hover {
+  cursor: pointer;
+}
+
 .input-group-prepend span {
   width: 50px;
   background-color: white;

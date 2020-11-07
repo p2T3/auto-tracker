@@ -27,14 +27,14 @@
         <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle">+ Add Vehicle</button>
     </div>
 
-    <!-- <div class="container card-form">
+    <div class="container card-form" data-toggle="modal" data-target="#exampleModalCenter">
         <div class="row d-flex justify-content-md-center h-100">
-            <div class="col-sm-4 m-4 align-items-center card ">
+            <div class="col-sm-4 m-4 align-items-center card  card-cursor">
                 <div class="card-header">
                     <H2>Car 1</H2>
                 </div>
                 <div class="card-body">
-                    <img src="https://via.placeholder.com/150" alt="">
+                    <img src="https://via.placeholder.com/150" alt="" >
                     <h4>Make: content</h4>
                     <h4>Model: content</h4>
                     <h4>Year: content</h4>
@@ -82,7 +82,30 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
+
+    <!--  Add the setup for the 'modal'  -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Pull in the scripts and libraries needed. -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
