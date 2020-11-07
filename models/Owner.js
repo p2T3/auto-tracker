@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class Owner extends Model {}
 
+// Define the data for the 'owner/user' table.
 Owner.init(
   {
     id: {

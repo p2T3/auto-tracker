@@ -3,6 +3,8 @@ const sequelize = require("../config/connection");
 
 class Driver extends Model {}
 
+// Define the data for the 'driver' table.  These tables specifies
+// the drivers available to assign to specific cars.
 Driver.init(
   {
     id: {
@@ -20,7 +22,7 @@ Driver.init(
       allowNull: false,
     },
     relation: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING,    // defines how this driver is related to the owner/user
       allowNull: false,
       validate: {
         len: [1],
