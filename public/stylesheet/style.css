@@ -65,6 +65,12 @@ body {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+.card-color {
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(0, 0, 0) !important;
+}
+
 header {
   color: white;
 }
