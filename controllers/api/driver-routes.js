@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { Owner, Auto, Driver } = require("../../models");
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Route to get all drivers
 router.get("/", (req, res) => {
   Driver.findAll({
     attributes: {
@@ -14,6 +17,9 @@ router.get("/", (req, res) => {
     });
 });
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Route to get one specific driver by ID
 router.get("/:id", (req, res) => {
   Driver.findOne({
     attributes: {
@@ -57,6 +63,9 @@ router.get("/:id", (req, res) => {
     });
 });
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Route to add a new driver
 router.post("/", (req, res) => {
   Driver.create({
     first_name: req.body.first_name,
@@ -82,6 +91,9 @@ router.post("/", (req, res) => {
     });
 });
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Route to update one specific driver by ID
 router.put("/:id", (req, res) => {
   Driver.update(
     {
@@ -110,6 +122,9 @@ router.put("/:id", (req, res) => {
     });
 });
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Route to delete one specific owner by ID
 router.delete("/:id", (req, res) => {
   Driver.destroy({
     where: {
