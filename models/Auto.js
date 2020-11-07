@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 
 class Auto extends Model {}
 
+// Define the data for the 'auto' table.
 Auto.init(
   {
     id: {
@@ -40,7 +41,7 @@ Auto.init(
       allowNull: false,
     },
     toll_tag: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING,    // needed for gated communities and office parking garages
       allowNull: false,
     },
     registration_expiration: {
@@ -52,11 +53,11 @@ Auto.init(
       allowNull: false,
     },
     oil_mileage: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,   // the mileage of the last oil change
       allowNull: false,
     },
     tire_mileage: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,   // the mileage of the last tire change
       allowNull: false,
     },
   },

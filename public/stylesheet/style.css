@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(../assets/images/auto-tracker-homepage.jpg);
+  background-image: url(../assets/images/auto-tracker-homepage.jpg);  /* the main background image */
   background-size: cover;
   background-position: 80%;
   background-attachment: fixed;
@@ -102,6 +102,9 @@ input:focus {
   padding: 5px;
 }
 
+/* ------------------------------------------------------------------------------------------------------*/
+/* Define the medial query (for display recognition and responsiveness).  This will rearrange the display
+   of the 'cards' containing the vehicle/driver details to fit the active screen size.  */
 @media screen and (max-width: 768px) {
   body {
     background-size: contain;
