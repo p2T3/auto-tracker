@@ -36,8 +36,8 @@
         {{log this }}
         {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
-            data-target="#view-auto-modal">
-            <div class="card-header">
+            data-target="#view-auto-modal" id={{this.id}}>
+            <div class="card-header" >
                 <H2>Vehicle: {{this.id}}</H2>
             </div>
             <div class="card-body">
@@ -54,6 +54,7 @@
 
         <div class="modal fade" id="view-auto-modal" tabindex="-1" role="dialog" aria-labelledby="view-auto-modal-title"
             aria-hidden="true">
+
             <div class="modal-dialog modal-dialog-centered " role="document">
                 <div class="modal-content card-color">
                     <div class="modal-header">
@@ -76,14 +77,14 @@
 
                                 </div>
                                 <div class="col-md-6 ml-auto">
-                                    <h4>VIN: {{this.vin}}</h4>
-                                    <h4>License Plate: {{this.vin}}</h4>
-                                    <h4>TollTag Number: {{this.vin}}</h4>
-                                    <h4>Insurance Expiration: {{this.vin}}</h4>
-                                    <h4>Registration Expiration: {{this.vin}}</h4>
-                                    <h4>Purchase Mileage: {{this.vin}}</h4>
-                                    <h4>Oil Change Mileage: {{this.vin}}</h4>
-                                    <h4>Tire Change Mileage: {{this.vin}}</h4>
+                                    <h5>VIN: {{this.vin}}</h5>
+                                    <h5>License Plate: {{this.license_plate}}</h5>
+                                    <h5>TollTag Number: {{this.toll_tag}}</h5>
+                                    <h5>Insurance Expiration: {{this.insurance_expiration}}</h5>
+                                    <h5>Registration Expiration: {{this.registration_expiration}}</h5>
+                                    <h5>Purchase Mileage: {{this.mileage}}</h5>
+                                    <h5>Oil Change Mileage: {{this.oil_mileage}}</h5>
+                                    <h5>Tire Change Mileage: {{this.tire_mileage}}</h5>
                                 </div>
 
                             </div>
@@ -103,8 +104,7 @@
 </div>
 
 
-{{!-- 
-    <!-- Modal For Adding a Car--> --}}
+{{!-- <!-- Modal For Adding a Car--> --}}
 <div class="modal fade" id="add-auto-modal" tabindex="-1" role="dialog" aria-labelledby="add-auto-modal-title"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">

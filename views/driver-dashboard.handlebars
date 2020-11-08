@@ -22,11 +22,15 @@
     </nav>
 </header>
 
+
+<div class="d-flex justify-content-md-center">
+    <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-driver" data-toggle="modal"
+            data-target="#add-driver-modal">+ Add Driver</button>
+</div>
+
+
 {{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
        Handle bars for the 'driver' dashboard page --}}
-<div class="d-flex justify-content-md-center">
-    <button class="btn btn-dark btn-lg btn-rounded btn-elegant  add-vehicle">+ Add Driver</button>
-</div>
 
 <div class="container card-form">
     <div class="row d-flex justify-content-md-center h-100">
@@ -45,5 +49,41 @@
         </div>
         {{/if}}
         {{/each}}
+    </div>
+</div>
+
+
+{{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      <!-- Modal For Adding a Driver--> --}}
+      
+<div class="modal fade" id="add-driver-modal" tabindex="-1" role="dialog" aria-labelledby="add-driver-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content card-color">
+            <div class="modal-header">
+                <h1 class="modal-title" id="add-auto-modal-title">Add Driver</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <form action="">
+                            <label for="make">First Name:</label><br>
+                            <input type="text" id="first_name" name="first_name" value=""><br>
+                            <label for="model">Last Name:</label><br>
+                            <input type="text" id="last_name" name="last_name" value=""><br>
+                            <label for="year">Relation:</label><br>
+                            <input type="text" id="relation" name="relation" value=""><br>                          
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
     </div>
 </div>
