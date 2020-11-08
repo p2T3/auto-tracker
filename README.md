@@ -13,7 +13,7 @@ Group 3 Project, November 2020
 
 
 ## Project Objective
-As a family or organization with several automobiles, I would like an application that can maintain important information about each vehicle in a centralized location so I always have access to that information.
+As a family or organization with several automobiles, I would like an application that can maintain important information about each vehicle in a centralized location so I always have access to that information.  Ready access to registration and insurance expirations as well as the mileage for oil and tire changes will enable all my vehicles to be legal and safe.
 
 ## Acceptance Criteria
 Given a number of vehicles and a number of drives:
@@ -45,7 +45,7 @@ Given a number of vehicles and a number of drives:
 ## Auto-Tracker Logic
 The application is designed according to the MVC architecture.  The database tables (maintaining the information related to vehicles and drivers)  and their relationships are setup in a \models folder.  The front-end (the user interaction pages) are setup in the \views and '\html templates' folders.  The tie (link) between the models and views is setup in the '\controllers\api' folders.  These controllers contain the routes for the CRUD (Create, Read, Update, Delete) database operations.
 
-The user interface (the pages displayed) is developed using Bootstrap and Handlebars.  Bootstrap and media queries are used to obtain the responsiveness of the application. This enables the presentation to resize according to the display area of the viewing device.  Handlebars is used to modularize the code and display the vehicle information from templates (partials).
+The user interface (the pages displayed) is developed using Bootstrap and Handlebars.  Bootstrap and media queries are used to obtain the responsiveness of the application. This enables the presentation window to resize according to the display area of the viewing device.  The Handlebars package is used to modularize the code and display the vehicle information, from templates utilizing partials where appropriate.  Data specific to a vehicle or driver is displayed modals.  Modals are also used to add vehicles and drivers.
 
 ## Important Links
 The URL to the GitHub repository: https://github.com/p2T3/auto-tracker 
@@ -55,3 +55,4 @@ The URL to the Heroku deployment: https://team-3-auto-tracker.herokuapp.com/
 ![Auto-Tracker Image](./screen-capture1.jpg)
 ![Auto-Tracker Image](./screen-capture2.jpg)
 ![Auto-Tracker Image](./screen-capture3.jpg)
+![Auto-Tracker Image](./screen-capture4.jpg)
