@@ -33,9 +33,10 @@
 
     <div class="row d-flex justify-content-md-center h-100">
         {{#each this}}
-        {{log this }}
+        {{!-- {{log this }} --}}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal" data-target="#view-auto-modal"
+        <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal" 
+        data-target="#view-auto-modal-{{this.id}}"
             id={{this.id}}>
             <div class="card-header">
                 <H2>Vehicle: {{this.id}}</H2>
@@ -52,7 +53,7 @@
         {{!-- ////////////////////////////////////////////////////////////////////////////// --}}
         {{!-- <!--  Add the setup for the 'vehicle modal'  --> --}}
 
-        <div class="modal fade" id="view-auto-modal" tabindex="-1" role="dialog" aria-labelledby="view-auto-modal-title"
+        <div class="modal fade" id="view-auto-modal-{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="view-auto-modal-title"
             aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-centered " role="document">
@@ -66,10 +67,12 @@
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="row">
+                                {{log this }}
 
                                 <div class="col-md-6 ml-auto">
 
                                     <img src="https://via.placeholder.com/200" alt="">
+
                                     <h4>Make: {{this.make}}</h4>
                                     <h4>Model: {{this.model}}</h4>
                                     <h4>Year: {{this.year}}</h4>
