@@ -23,10 +23,11 @@
         </nav>
     </header>
     <div class="d-flex justify-content-md-center">
-        <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle">+ Add Driver</button>
+        <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-vehicle" data-toggle="modal"
+            data-target="#add-driver-modal">+ Add Driver</button>
     </div>
 
-    <!-- <div class="container card-form">
+    <div class="container card-form">
         <div class="row d-flex justify-content-md-center h-100">
             <div class="col-sm-4 m-4 align-items-center card ">
                 <div class="card-header">
@@ -37,10 +38,45 @@
                     <h4>Vehicle: content</h4>
                     <h4>Relation: content</h4>
                 </div>
+                <div>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
+    <div class="modal fade" id="add-driver-modal" tabindex="-1" role="dialog" aria-labelledby="add-driver-modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content card-color">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="add-driver-modal-title">Add Driver</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form action="">
+                                <label for="fname">First name:</label><br>
+                                <input type="text" id="fname" name="fname" value=""><br>
+                                <label for="lname">Last name:</label><br>
+                                <input type="text" id="lname" name="lname" value=""><br>
+                                <label for="relation">Relation:</label><br>
+                                <input type="text" id="relation" name="relation" value=""><br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Pull in the scripts and libraries needed. -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
