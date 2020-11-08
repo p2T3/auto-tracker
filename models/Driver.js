@@ -22,7 +22,7 @@ Driver.init(
       allowNull: false,
     },
     relation: {
-      type: DataTypes.STRING,    // defines how this driver is related to the owner/user
+      type: DataTypes.STRING, // defines how this driver is related to the owner/user
       allowNull: false,
       validate: {
         len: [1],
