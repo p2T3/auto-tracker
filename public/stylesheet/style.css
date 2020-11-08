@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(../assets/images/auto-tracker-homepage.jpg);  /* the main background image */
+  background-image: url(../assets/images/auto-tracker-homepage.jpg); /* the main background image */
   background-size: cover;
   background-position: 80%;
   background-attachment: fixed;
@@ -68,14 +68,26 @@ body {
 .card-color {
   margin-top: auto;
   margin-bottom: auto;
-  background-color: rgba(0, 0, 0) !important;
+  background-color: rgb(65, 63, 63) !important;
 }
 
-header {
+.display-label {
+  color: goldenrod;
+  display: block;
+}
+
+header,
+.display-data, #card-data  {
   color: white;
+  display: block;
 }
 
-.add-vehicle {
+{
+  display: block;
+}
+
+.add-vehicle,
+.add-driver {
   margin-top: 2rem;
   width: 25%;
 }
@@ -106,6 +118,15 @@ input:focus {
   width: 100%;
 }
 
+#btn-color {
+  background-color: rgb(36, 36, 36);
+  color: white;
+}
+
+#btn-color:hover {
+  background-color: grey;
+}
+
 .signup-btn {
   text-decoration: none;
   color: white;
@@ -124,7 +145,11 @@ input:focus {
     background-color: black;
   }
 
-  .add-vehicle {
+  .add-vehicle,
+  .add-driver {
     width: 100%;
+  }
+  .display-data {
+    display: block;
   }
 }

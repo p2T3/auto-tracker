@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-sm nav nav-pills flex-column flex-sm-row">
         <div class="container">
-            <h1 class="nav-header nav-item navbar-brand " href="#">DRIVER DASHBOARD</h1>
+            <h1 class="nav-header nav-item navbar-brand">DRIVER DASHBOARD</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
                 <span class="line"></span>
                 <span class="line"></span>
@@ -23,7 +23,7 @@
 
 
 <div class="d-flex justify-content-md-center">
-    <button class="btn btn-dark btn-lg btn-rounded btn-elegant w-25 add-driver" data-toggle="modal"
+    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-driver" data-toggle="modal"
         data-target="#add-driver-modal">+ Add Driver</button>
 </div>
 
@@ -35,54 +35,19 @@
     <div class="row d-flex justify-content-md-center h-100">
         {{#each this}}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-center card ">
+        <div class="col-sm-4 m-4 align-items-left card ">
             <div class="card-header">
-                <H2>Driver: {{this.driver.id}}</H2>
-                <h3>Name: {{this.driver.first_name}} {{this.driver.last_name}}</h3>
+                <h2>Driver: {{this.driver.id}}</h2>
+                <h4 class="display-label">Name: <span id="card-data">{{this.driver.first_name}} {{this.driver.last_name}}</span></h4>
             </div>
             <div class="card-body">
                 <img src="https://via.placeholder.com/150" alt="">
-                <h4>Vehicle: {{this.make}} {{this.model}}</h4>
-                <h4>Relation: {{this.driver.relation}}</h4>
+                <h4 class="display-label">Vehicle: <span id="card-data">{{this.make}} {{this.model}}</span></h4>
+                <h4 class="display-label">Relation: <span id="card-data">{{this.driver.relation}}</span></h4>
             </div>
         </div>
         {{/if}}
         {{/each}}
     </div>
-</div>
-
-
-{{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      <!-- Modal For Adding a Driver--> --}}
-
-<div class="modal fade" id="add-driver-modal" tabindex="-1" role="dialog" aria-labelledby="add-driver-modal-title"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-        <div class="modal-content card-color">
-            <div class="modal-header">
-                <h1 class="modal-title" id="add-auto-modal-title">Add Driver</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <form action="">
-                            <label for="make">First Name:</label><br>
-                            <input type="text" id="first_name" name="first_name" value=""><br>
-                            <label for="model">Last Name:</label><br>
-                            <input type="text" id="last_name" name="last_name" value=""><br>
-                            <label for="year">Relation:</label><br>
-                            <input type="text" id="relation" name="relation" value=""><br>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-            </div>
-        </div>
-    </div>
+    {{> driver-modal}}
 </div>

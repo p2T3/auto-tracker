@@ -1,0 +1,50 @@
+{{!-- <!-- Modal For Adding a Car--> --}}
+<div class="modal fade" id="add-auto-modal" tabindex="-1" role="dialog" aria-labelledby="add-auto-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content card-color">
+            <div class="modal-header">
+                <h1 class="modal-title" id="add-auto-modal-title">Add Vehicle</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <form action="">
+                            <label for="make" class="display-label">Make:</label>
+                            <input type="text" id="make" name="make" value="">
+                            <label for="model" class="display-label">Model:</label>
+                            <input type="text" id="model" name="model" value="">
+                            <label for="year" class="display-label">Year:</label>
+                            <input type="text" id="year" name="year" value="">
+                            <label for="color" class="display-label">Color:</label>
+                            <input type="text" id="color" name="color" value="">
+                            <label for="vin" class="display-label">VIN:</label>
+                            <input type="text" id="vin" name="vin" value="">
+                            <label for="license-plate" class="display-label">License Plate:</label>
+                            <input type="text" id="license-plate" name="license-plate" value="">
+                            <label for="tolltag-number" class="display-label">TollTag Number:</label>
+                            <input type="text" id="tolltag-number" name="tolltag-number" value="">
+                            <label for="insurance-expiration" class="display-label">Insurance Expiration:</label>
+                            <input type="text" id="insurance-expiration" name="insurance-expiration" value="">
+                            <label for="color" class="display-label">Registration Expiration:</label>
+                            <input type="text" id="registration-expiration" name="registration-expiration" value="">
+                            <label for="color" class="display-label">Purchase Mileage:</label>
+                            <input type="text" id=purchase-mileage name="purchase-mileage" value="">
+                            <label for="color" class="display-label">Oil Change Mileage:</label>
+                            <input type="text" id="oil-change-mileage" name="oil-change-mileage" value="">
+                            <label for="color" class="display-label">Tire Change Mileage: </label>
+                            <input type="text" id="tire-change-mileage" name="tire-change-mileage" value="">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" id="btn-color">Add Vehicle</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
