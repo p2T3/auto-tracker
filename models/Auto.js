@@ -41,7 +41,7 @@ Auto.init(
       allowNull: false,
     },
     toll_tag: {
-      type: DataTypes.STRING,    // needed for gated communities and office parking garages
+      type: DataTypes.STRING, // needed for gated communities and office parking garages
       allowNull: false,
     },
     registration_expiration: {
@@ -53,11 +53,11 @@ Auto.init(
       allowNull: false,
     },
     oil_mileage: {
-      type: DataTypes.INTEGER,   // the mileage of the last oil change
+      type: DataTypes.INTEGER, // the mileage of the last oil change
       allowNull: false,
     },
     tire_mileage: {
-      type: DataTypes.INTEGER,   // the mileage of the last tire change
+      type: DataTypes.INTEGER, // the mileage of the last tire change
       allowNull: false,
     },
   },
