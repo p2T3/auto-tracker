@@ -20,6 +20,8 @@
         </div>
     </nav>
 </header>
+
+
 <div class="container card-form">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
@@ -27,25 +29,29 @@
                 <h3>Login</h3>
             </div>
             <div class="card-body">
-                <form>
+                <form class="login-form"> 
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" class="form-control" placeholder="Email" id="email-login">
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" id="password-login">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-dark btn-lg btn-rounded btn-elegant login-btn">Login</button>
+                        <button class="btn btn-dark btn-lg btn-rounded btn-elegant login-btn">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- Load the script for the login page.  -->
+<script src="/javascript/login.js"></script> 
