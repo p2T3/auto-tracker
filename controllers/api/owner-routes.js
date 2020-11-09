@@ -103,6 +103,7 @@ router.post("/login", (req, res) => {
   }).then((dbOwnerData) => {
     console.log("In owner.findOne.", dbOwnerData);
     if (!dbOwnerData) {
+      console.log("no owner");
       res.status(400).json({ message: "No user with that email address!" });
       return;
     }
@@ -112,6 +113,7 @@ router.post("/login", (req, res) => {
     const validPassword = dbOwnerData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log("bad password");
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
@@ -121,7 +123,7 @@ router.post("/login", (req, res) => {
     //   req.session.user_id = dbUserData.id;
     //   req.session.username = dbUserData.username;
     //   req.session.loggedIn = true;
-
+    console.log("logged in")
     res.json({ owner: dbOwnerData, message: "You are now logged in!" });
   });
 });

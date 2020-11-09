@@ -1,4 +1,6 @@
 const { Owner } = require("../models");
+const bcrypt = require("bcrypt");
+
 
 const ownerData = [
   {
@@ -6,7 +8,7 @@ const ownerData = [
     first_name: "John",
     last_name: "Doe",
     email: "test@test.com",
-    password: "test1",
+    password: "test1"
   },
 ];
 
