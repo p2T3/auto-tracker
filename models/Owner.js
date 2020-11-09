@@ -50,9 +50,8 @@ Owner.init(
       // This second variation uses 'async/await'
       async beforeCreate(newOwnerData) {
         newOwnerData.password = await bcrypt.hash(newOwnerData.password, 10);
-        return newUserData;
+        return newOwnerData;
       },
-
       // This ability is needed when a user updates his/her password.
       // set up beforeUpdate lifecycle "hook" functionality
       async beforeUpdate(updatedOwnerData) {
@@ -63,8 +62,6 @@ Owner.init(
         return updatedOwnerData;
       },
     },
-  },
-  {
     sequelize,
     freezeTableName: true,
     underscored: true,
