@@ -34,7 +34,7 @@
         {{#each this}}
         {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
-        {{!-- use this.id to know which modal was clicked and display the correct modal --}}
+            {{!-- use this.id to know which modal was clicked and display the correct modal --}}
             data-target="#view-auto-modal-{{this.id}}">
             <div class="card-header">
                 <h2>Vehicle: {{this.id}}</h2>
@@ -44,7 +44,8 @@
                 <h4 class="display-label">Make: <span id="card-data">{{this.make}}</span></h4>
                 <h4 class="display-label">Model: <span id="card-data">{{this.model}}</span></h4>
                 <h4 class="display-label">Year: <span id="card-data">{{this.year}}</span></h4>
-                <h4 class="display-label">Driver: <span id="card-data">{{this.driver.first_name}} {{this.driver.last_name}}</span> </h4>
+                <h4 class="display-label">Driver: <span id="card-data">{{this.driver.first_name}}
+                        {{this.driver.last_name}}</span> </h4>
             </div>
         </div>
         {{> view-vehicle-modal}}

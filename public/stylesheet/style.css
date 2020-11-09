@@ -77,12 +77,9 @@ body {
 }
 
 header,
-.display-data, #card-data  {
+.display-data,
+#card-data {
   color: white;
-  display: block;
-}
-
-{
   display: block;
 }
 
