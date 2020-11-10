@@ -60,6 +60,22 @@ Auto.init(
       type: DataTypes.INTEGER, // the mileage of the last tire change
       allowNull: false,
     },
+    owner_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'owner',
+        key: 'id'
+      }
+    },
+    driver_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'driver',
+        key: 'id'
+      }
+    },
   },
   {
     sequelize,

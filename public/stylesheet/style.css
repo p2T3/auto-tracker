@@ -115,12 +115,12 @@ input:focus {
   width: 100%;
 }
 
-#btn-color, #add-driver {
+#btn-color, #add-driver, #add-vehicle {
   background-color: rgb(36, 36, 36);
   color: white;
 }
 
-#btn-color:hover, #add-driver:hover {
+#btn-color:hover, #add-driver:hover, #add-vehicle:hover {
   background-color: grey;
 }
 
