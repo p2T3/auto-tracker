@@ -154,8 +154,12 @@ input:focus {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: black;
+    font-size: 16px;
   }
 
+  .card-header h2 {
+    font-size: 25px;
+  }
   .add-vehicle,
   .add-driver {
     width: 100%;
