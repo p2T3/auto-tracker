@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require( "../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +64,7 @@ router.get("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to add a new driver
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Driver.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
@@ -87,7 +88,7 @@ router.post("/", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific driver by ID
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Driver.update(
     {
       first_name: req.body.first_name,
@@ -117,7 +118,7 @@ router.put("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to delete one specific owner by ID
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Driver.destroy({
     where: {
       id: req.params.id,

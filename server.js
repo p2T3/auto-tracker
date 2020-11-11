@@ -4,13 +4,11 @@ const sequelize = require("./config/connection");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const routes = require("./controllers");
-const fs = require('fs');
-// impotinrg aws library to access the Amazon S3 bucket where images will be stored
-const AWS = require('aws-sdk');
+
 
 const exphbs = require("express-handlebars");
 const hbs = exphbs.create({});
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 const sess = {
     secret: process.env.DB_SECRET,
@@ -20,7 +18,7 @@ const sess = {
     store: new SequelizeStore({
         db: sequelize,
         checkExpirationInterval: 1000 * 60 * 10, // will check every 10 minutes
-        expiration: 1000 * 60 * 30 // will expire after 30 minutes
+        expiration: 1000 * 60 * 30               // will expire after 30 minutes
     })
 };
 

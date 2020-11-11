@@ -1,6 +1,4 @@
 const { Owner } = require("../models");
-const bcrypt = require("bcrypt");
-
 
 const ownerData = 
   {
