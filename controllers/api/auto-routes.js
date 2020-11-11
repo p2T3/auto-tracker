@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const withAuth = require( "../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,9 +65,9 @@ router.get("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to add a new vehicle
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Auto.create({
-    owner_id: req.body.owner_id,
+    owner_id: req.session.owner_id,
     driver_id: req.body.driver_id,
     make: req.body.make,
     model: req.body.model,
@@ -82,17 +83,14 @@ router.post("/", (req, res) => {
     tire_mileage: req.body.tire_mileage,
   })
     .then((dbAutoData) => {
-      // Commented out below for now until we set up a session login.
 
-      // req.session.save(() => {
-      //     req.session.user_id = dbDriverData.id;
-      //     req.session.username = dbDriverData.username;
-      //     req.session.loggedIn = true;
+      req.session.save(() => {
+          req.session.id = dbAutoData.id;
+          req.session.loggedIn = true;
 
-      //     res.json(dbAutoData);
-      // });
+          res.json(dbAutoData);
+      });
 
-      res.json(dbAutoData);
     })
     .catch((err) => {
       console.log(err);
@@ -101,11 +99,11 @@ router.post("/", (req, res) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// Route to update one specific owner by ID
-router.put("/:id", (req, res) => {
+// Route to update one specific auto by ID
+router.put("/:id", withAuth, (req, res) => {
   Auto.update(
     {
-      owner_id: req.body.owner_id,
+      owner_id: req.session.owner_id,
       driver_id: req.body.driver_id,
       make: req.body.make,
       model: req.body.model,
@@ -143,7 +141,7 @@ router.put("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to delete one specific owner by ID
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Auto.destroy({
     where: {
       id: req.params.id,

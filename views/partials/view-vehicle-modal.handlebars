@@ -1,0 +1,54 @@
+{{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      <!-- Modal For Viewing a--> --}}
+{{!-- this.id attaches unique id for each vehicle modal --}}
+<div class="modal fade" id="view-auto-modal-{{this.id}}" tabindex="-1" role="dialog"
+    aria-labelledby="view-auto-modal-title" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content card-color">
+            <div class="modal-header">
+                <h1 class="modal-title" id="view-auto-modal-title">Vehicle {{this.id}}</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-6 ml-auto">
+                            <img src="https://via.placeholder.com/200" alt="">
+                            <h4 class="display-label">Make: <span class="display-data">{{this.make}}</span></h4>
+                            <h4 class="display-label">Model: <span class="display-data">{{this.model}}</span></h4>
+                            <h4 class="display-label">Year: <span class="display-data">{{this.year}}</span></h4>
+                            <h4 class="display-label">Color: <span class="display-data">{{this.color}}</span></h4>
+
+                        </div>
+                        <div class="col-md-6 ml-auto">
+                            <h5 class="display-label">VIN: <span class="display-data">{{this.vin}}</span></h5>
+                            <h5 class="display-label">License Plate: <span
+                                    class="display-data">{{this.license_plate}}</span></h5>
+                            <h5 class="display-label">TollTag Number: <span
+                                    class="display-data">{{this.toll_tag}}</span></h5>
+                            <h5 class="display-label">Insurance Expires: <span
+                                    class="display-data">{{this.insurance_expiration}}</span></h5>
+                            <h5 class="display-label">Registration Expires: <span
+                                    class="display-data">{{this.registration_expiration}}</span></h5>
+                            <h5 class="display-label">Purchase Mileage: <span
+                                    class="display-data">{{this.mileage}}</span></h5>
+                            <h5 class="display-label">Oil Change Mileage: <span
+                                    class="display-data">{{this.oil_mileage}}</span></h5>
+                            <h5 class="display-label">Tire Change Mileage: <span
+                                    class="display-data">{{this.tire_mileage}}</span></h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" id="btn-color">Save changes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
