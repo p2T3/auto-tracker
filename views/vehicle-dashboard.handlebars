@@ -10,11 +10,17 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav nav nav-fill w-100">
                     <li class="nav-item">
+                    {{#if loggedIn}}
                         <a class="nav-item nav-link" href="/driver">Driver Dashboard</a>
+                    {{/if}}
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="/#">Logout</a>
+                    {{#if loggedIn}}
+                        <a class="nav-item nav-link" href="/#" id="logout">Logout</a>
+                    {{/if}}
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -31,7 +37,8 @@
        Handle bars for the 'vehicle' dashboard page --}}
 <div class="container card-form">
     <div class="row d-flex justify-content-md-center h-100">
-        {{#each this}}
+        {{#each autos}}
+        {{log this}}
         {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
             {{!-- use this.id to know which modal was clicked and display the correct modal --}}
@@ -54,3 +61,5 @@
     </div>
     {{> add-vehicle-modal}}
 </div>
+
+<script src="/javascript/logout.js"></script>

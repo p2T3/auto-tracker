@@ -15,8 +15,6 @@ async function addVehicle(event) {
     const tire_mileage = document.querySelector('input[name="tire-change-mileage"]').value.trim();
 
     // Hard-coded both values for now for testing purposes but need to figure out how to grab this information.
-    const owner_id = 1;
-    const driver_id = 1;
 
     const response = await fetch('/api/autos', {
         method: "POST",
@@ -33,8 +31,6 @@ async function addVehicle(event) {
             insurance_expiration,
             oil_mileage,
             tire_mileage,
-            owner_id,
-            driver_id
         }),
         headers: {
             "Content-Type": "application/json"
