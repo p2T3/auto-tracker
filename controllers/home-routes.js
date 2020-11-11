@@ -7,16 +7,17 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/vehicle');
-  //   return;
-  // }
+  console.log("logged in:", req.session.loggedIn)
+  if (req.session.loggedIn) {
+    res.redirect('/vehicle');
+    return;
+  }
 
-  // res.render("login", {
-  //   loggedIn: true
-  // });
+  res.render("login", {
+    loggedIn: true
+  });
 
-  res.render("login");
+  // res.render("login");
 });
 
 router.get("/signup", (req, res) => {

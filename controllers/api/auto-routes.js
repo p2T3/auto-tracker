@@ -66,7 +66,7 @@ router.get("/:id", (req, res) => {
 // Route to add a new vehicle
 router.post("/", (req, res) => {
   Auto.create({
-    owner_id: req.body.owner_id,
+    owner_id: req.session.owner_id,
     driver_id: req.body.driver_id,
     make: req.body.make,
     model: req.body.model,
@@ -85,8 +85,7 @@ router.post("/", (req, res) => {
       // Commented out below for now until we set up a session login.
 
       // req.session.save(() => {
-      //     req.session.user_id = dbDriverData.id;
-      //     req.session.username = dbDriverData.username;
+      //     req.session.id = dbAutoData.id;
       //     req.session.loggedIn = true;
 
       //     res.json(dbAutoData);
@@ -101,11 +100,11 @@ router.post("/", (req, res) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// Route to update one specific owner by ID
+// Route to update one specific auto by ID
 router.put("/:id", (req, res) => {
   Auto.update(
     {
-      owner_id: req.body.owner_id,
+      owner_id: req.session.owner_id,
       driver_id: req.body.driver_id,
       make: req.body.make,
       model: req.body.model,

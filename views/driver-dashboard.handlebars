@@ -12,9 +12,11 @@
                     <li class="nav-item">
                         <a class="nav-item nav-link" href="/vehicle">Vehicle Dashboard</a>
                     </li>
+                    {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="/#">Logout</a>
+                        <a class="nav-item nav-link" href="/#" id="logout">Logout</a>
                     </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>
@@ -52,3 +54,5 @@
     </div>
     {{> driver-modal}}
 </div>
+
+<script src="/javascript/logout.js"></script>

@@ -72,15 +72,12 @@ router.post("/", (req, res) => {
     .then((dbDriverData) => {
       // Commented out below for now until we set up a session login.
 
-      // req.session.save(() => {
-      //     req.session.user_id = dbDriverData.id;
-      //     req.session.username = dbDriverData.username;
-      //     req.session.loggedIn = true;
+      req.session.save(() => {
+          req.session.driver_id = dbDriverData.id;
+          req.session.loggedIn = true;
 
-      //     res.json(dbDriverData);
-      // });
-
-      res.json(dbDriverData);
+          res.json(dbDriverData);
+      });
     })
     .catch((err) => {
       console.log(err);
