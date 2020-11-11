@@ -51,10 +51,10 @@ router.get("/driver", (req, res) => {
   })
     .then((dbAutoData) => {
       // serialize data before passing to template
-      const autos = dbAutoData.map((auto) => auto.get({ plain: true }));
+      const drivers = dbAutoData.map((auto) => auto.get({ plain: true }));
 
       // res.render("driver-dashboard", autos);
-      res.render('driver-dashboard', { autos, loggedIn: true });
+      res.render('driver-dashboard', { drivers, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
