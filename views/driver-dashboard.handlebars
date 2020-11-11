@@ -44,13 +44,13 @@
             <div class="card-body">
                 <img src="https://via.placeholder.com/150" alt="">
                 {{!-- add image form here --}}
-                <form method="POST" action="/upload-image" enctype="multipart/form-data">
-                    <div>
+                <form method="POST" class="upload-form" action="/image-upload" enctype="multipart/form-data">
+                    <div class="image-btn">
                         <label>Select your profile picture:</label>
                         <input type="file" name="image" />
                     </div>
-                    <div>
-                        <input type="submit" name="btn_upload_image" value="Upload" />
+                    <div class="image-btn">
+                        <input type="submit" name="btn_image_upload" value="Upload" />
                     </div>
                 </form>
                 <h4 class="display-label">Vehicle: <span id="card-data">{{this.make}} {{this.model}}</span></h4>
@@ -61,4 +61,5 @@
         {{/each}}
     </div>
     {{> driver-modal}}
+    <script src="javascript/image-upload"></script>
 </div>

@@ -7,7 +7,6 @@ const upload = require("../public/javascript/image-upload");
 const singleUpload = upload.single("image");
 
 router.post("/image-upload", function (req, res) {
-
   singleUpload(req, res, function (err) {
     if (err) {
       return res.status(422).send({
@@ -16,7 +15,7 @@ router.post("/image-upload", function (req, res) {
     }
     console.log("Uploaded!");
     //returning the url of the image that is stored on aws s3 bucket
-    return res.json({ 'imageUrl': req.file.location });
+    return res.json({ imageUrl: req.file.location });
   });
 });
 

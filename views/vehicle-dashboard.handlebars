@@ -40,7 +40,8 @@
                 <h2>Vehicle: {{this.id}}</h2>
             </div>
             <div class="card-body">
-                <img class="car-image" src="https://auto-tracker-bucket.s3.us-east-2.amazonaws.com/1605065743761" alt="">
+                <img class="car-image" src="https://auto-tracker-bucket.s3.us-east-2.amazonaws.com/1605065743761"
+                    alt="">
                 <h4 class="display-label">Make: <span id="card-data">{{this.make}}</span></h4>
                 <h4 class="display-label">Model: <span id="card-data">{{this.model}}</span></h4>
                 <h4 class="display-label">Year: <span id="card-data">{{this.year}}</span></h4>
@@ -53,4 +54,5 @@
         {{/each}}
     </div>
     {{> add-vehicle-modal}}
+    <script src="javascript/image-upload"></script>
 </div>
