@@ -59,7 +59,7 @@ Auto.init(
     tire_mileage: {
       type: DataTypes.INTEGER, // the mileage of the last tire change
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,

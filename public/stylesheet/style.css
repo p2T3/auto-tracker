@@ -130,6 +130,11 @@ input:focus {
   padding: 5px;
 }
 
+.car-image {
+  width: 200px;
+  height: auto;
+}
+
 /* ------------------------------------------------------------------------------------------------------*/
 /* Define the medial query (for display recognition and responsiveness).  This will rearrange the display
    of the 'cards' containing the vehicle/driver details to fit the active screen size.  */

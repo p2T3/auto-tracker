@@ -43,6 +43,16 @@
             </div>
             <div class="card-body">
                 <img src="https://via.placeholder.com/150" alt="">
+                {{!-- add image form here --}}
+                <form method="POST" action="/upload-image" enctype="multipart/form-data">
+                    <div>
+                        <label>Select your profile picture:</label>
+                        <input type="file" name="image" />
+                    </div>
+                    <div>
+                        <input type="submit" name="btn_upload_image" value="Upload" />
+                    </div>
+                </form>
                 <h4 class="display-label">Vehicle: <span id="card-data">{{this.make}} {{this.model}}</span></h4>
                 <h4 class="display-label">Relation: <span id="card-data">{{this.driver.relation}}</span></h4>
             </div>
