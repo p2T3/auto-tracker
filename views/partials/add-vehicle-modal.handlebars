@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <form action="">
+                        <form action="" enctype="multipart/form-data">
                             <label for="make" class="display-label">Make:</label>
                             <input type="text" id="make" name="make" value="">
                             <label for="model" class="display-label">Model:</label>
@@ -38,16 +38,15 @@
                             <label for="tire-change-mileage" class="display-label">Tire Change Mileage: </label>
                             <input type="text" id="tire-change-mileage" name="tire-change-mileage" value="">
                             {{!-- add image form here --}}
-                            <form method="POST" class="upload-form" action="/controllers/api/auto-routes.js"
-                                enctype="multipart/form-data">
+                            
                                 <div class="image-btn">
                                     <label>Select your vehicle image:</label>
-                                    <input type="file" name="image" />
+                                    <input type="file" name="image_url" />
                                 </div>
-                                <div class="image-btn">
-                                    <input type="submit" name="btn_image_upload" value="Upload" />
-                                </div>
-                            </form>
+                                {{!-- <div class="image-btn">
+                                    <button id="btn_image_upload">Save</button>
+                                </div> --}}
+                           
                         </form>
                     </div>
                 </div>

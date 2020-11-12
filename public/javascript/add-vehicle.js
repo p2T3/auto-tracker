@@ -13,6 +13,7 @@ async function addVehicle(event) {
     const insurance_expiration = document.querySelector('input[name="insurance-expiration"]').value.trim();
     const oil_mileage = document.querySelector('input[name="oil-change-mileage"]').value.trim();
     const tire_mileage = document.querySelector('input[name="tire-change-mileage"]').value.trim();
+    const image_url = document.querySelector('input[name="image_url"]').value.trim();
 
     // Hard-coded both values for now for testing purposes but need to figure out how to grab this information.
 
@@ -31,6 +32,7 @@ async function addVehicle(event) {
             insurance_expiration,
             oil_mileage,
             tire_mileage,
+            image_url
         }),
         headers: {
             "Content-Type": "application/json"
