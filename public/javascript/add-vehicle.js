@@ -13,8 +13,7 @@ async function addVehicle(event) {
     const insurance_expiration = document.querySelector('input[name="insurance-expiration"]').value.trim();
     const oil_mileage = document.querySelector('input[name="oil-change-mileage"]').value.trim();
     const tire_mileage = document.querySelector('input[name="tire-change-mileage"]').value.trim();
-
-    // Hard-coded both values for now for testing purposes but need to figure out how to grab this information.
+    
 
     const response = await fetch('/api/autos', {
         method: "POST",
