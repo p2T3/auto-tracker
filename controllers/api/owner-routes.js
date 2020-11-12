@@ -124,6 +124,7 @@ router.post("/login", (req, res) => {
 
     req.session.save(() => {
       // declare session variables
+      console.log(dbOwnerData);
       req.session.owner_id = dbOwnerData.id;
       req.session.email = dbOwnerData.email;
       req.session.loggedIn = true;

@@ -43,10 +43,18 @@
                                     <label>Select your vehicle image:</label>
                                     <input type="file" name="image_url" />
                                 </div>
-                                {{!-- <div class="image-btn">
-                                    <button id="btn_image_upload">Save</button>
-                                </div> --}}
-                           
+                                <div class="image-btn">
+                                    <input type="submit" name="btn_image_upload" value="Upload" />
+                                </div>
+                            </form>
+
+                            <label for="cars">Choose a car:</label>
+                            <select name="cars" id="cars">
+                                {{#each autos}}
+                                <option value='{{this.driver.first_name}}{{this.driver.last_name}}'>
+                                    {{this.driver.first_name}} {{this.driver.last_name}}</option>
+                                {{/each}}
+                            </select>
                         </form>
                     </div>
                 </div>
