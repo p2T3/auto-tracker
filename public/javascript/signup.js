@@ -27,7 +27,7 @@ async function signupFormHandler(event) {
       console.log("success");
       document.location.replace("/vehicle");
     } else {
-      console.log("STATUS",response);
+      console.log("STATUS", response);
 
       alert(response.statusText);
     }

@@ -37,6 +37,17 @@
                             <input type="text" id="oil-change-mileage" name="oil-change-mileage" value="">
                             <label for="tire-change-mileage" class="display-label">Tire Change Mileage: </label>
                             <input type="text" id="tire-change-mileage" name="tire-change-mileage" value="">
+                            {{!-- add image form here --}}
+                            <form method="POST" class="upload-form" action="/controllers/api/auto-routes.js"
+                                enctype="multipart/form-data">
+                                <div class="image-btn">
+                                    <label>Select your vehicle image:</label>
+                                    <input type="file" name="image" />
+                                </div>
+                                <div class="image-btn">
+                                    <input type="submit" name="btn_image_upload" value="Upload" />
+                                </div>
+                            </form>
                         </form>
                     </div>
                 </div>

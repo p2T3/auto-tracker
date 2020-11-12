@@ -17,7 +17,19 @@
                     <div class="row">
 
                         <div class="col-md-6 ml-auto">
-                            <img src="https://via.placeholder.com/200" alt="">
+                            <img class="car-image"
+                                src="{{this.image_url}}" alt="">
+                            {{!-- add image form here --}}
+                            <form method="POST" class="upload-form" action="/image-upload"
+                                enctype="multipart/form-data">
+                                <div class="image-btn">
+                                    <label>Select your vehicle image:</label>
+                                    <input type="file" name="image" />
+                                </div>
+                                <div class="image-btn">
+                                    <input type="submit" name="btn_image_upload" value="Upload" />
+                                </div>
+                            </form>
                             <h4 class="display-label">Make: <span class="display-data">{{this.make}}</span></h4>
                             <h4 class="display-label">Model: <span class="display-data">{{this.model}}</span></h4>
                             <h4 class="display-label">Year: <span class="display-data">{{this.year}}</span></h4>

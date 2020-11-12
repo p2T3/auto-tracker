@@ -130,6 +130,20 @@ input:focus {
   padding: 5px;
 }
 
+.car-image {
+  width: 200px;
+  height: auto;
+}
+
+.upload-form, .image-btn {
+  font-size: 1rem;
+}
+
+.image-btn {
+ margin: 5px;
+ padding: 1px;
+}
+
 /* ------------------------------------------------------------------------------------------------------*/
 /* Define the medial query (for display recognition and responsiveness).  This will rearrange the display
    of the 'cards' containing the vehicle/driver details to fit the active screen size.  */
@@ -140,8 +154,12 @@ input:focus {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: black;
+    font-size: 16px;
   }
 
+  .card-header h2 {
+    font-size: 25px;
+  }
   .add-vehicle,
   .add-driver {
     width: 100%;
