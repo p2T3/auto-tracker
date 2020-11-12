@@ -59,6 +59,9 @@ Auto.init(
     tire_mileage: {
       type: DataTypes.INTEGER, // the mileage of the last tire change
       allowNull: false,
+    },
+    image_url: {
+      type: DataTypes.STRING
     }
   },
   {
