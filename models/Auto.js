@@ -62,6 +62,7 @@ Auto.init(
     },
     image_url: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

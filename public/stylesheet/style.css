@@ -62,7 +62,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 60%;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgb(65, 63, 63, 0.4) !important;
 }
 
 .card-color {
@@ -136,9 +136,19 @@ input:focus {
   padding: 5px;
 }
 
-.car-image {
-  width: 200px;
+.car-image, .driver-image {
+  width: 250px;
   height: auto;
+
+}
+.modal-car-image {
+  width: 430px;
+  height: auto;
+}
+.driver-image {
+  width: 150px;
+  height: auto;
+
 }
 
 .upload-form,
@@ -153,10 +163,6 @@ input:focus {
   font-size: 1.2rem;
   padding: 1px;
 }
-
-/* .driver option {
-  display: block;
-} */
 
 /* ------------------------------------------------------------------------------------------------------*/
 /* Define the medial query (for display recognition and responsiveness).  This will rearrange the display
@@ -175,10 +181,16 @@ input:focus {
     font-size: 25px;
   }
   .add-vehicle,
-  .add-driver {
+  .add-driver,
+  .card {
     width: 100%;
   }
   .display-data {
     display: block;
+  }
+  .modal-car-image,
+  .car-image {
+    width: 200px;
+    height: auto;
   }
 }

@@ -15,7 +15,7 @@ router.get("/vehicle", (req, res) => {
     include: [
       {
         model: Driver,
-        attributes: ["id", "first_name", "last_name", "relation"],
+        attributes: ["id", "first_name", "last_name", "relation", "image_url"],
       },
     ],
   })
@@ -36,7 +36,7 @@ router.get("/vehicle", (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////
 // Route for the 'driver' dashboard page.
 router.get("/driver", (req, res) => {
-  Auto.findAll({
+  Driver.findAll({
     where: {
       owner_id: req.session.owner_id,
     },
@@ -45,14 +45,14 @@ router.get("/driver", (req, res) => {
     },
     include: [
       {
-        model: Driver,
-        attributes: ["id", "first_name", "last_name", "relation"],
+        model: Auto,
+        attributes: ["id", "make", "model", "owner_id", "driver_id", "image_url"],
       },
     ],
   })
-    .then((dbAutoData) => {
+    .then((dbDriverData) => {
       // serialize data before passing to template
-      const drivers = dbAutoData.map((auto) => auto.get({ plain: true }));
+      const drivers = dbDriverData.map((driver) => driver.get({ plain: true }));
 
       // res.render("driver-dashboard", autos);
       res.render("driver-dashboard", { drivers, loggedIn: true });

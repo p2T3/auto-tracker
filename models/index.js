@@ -14,6 +14,10 @@ Owner.hasMany(Auto, {
   foreignKey: "owner_id", // an owner can own many vehicles
 });
 
+Owner.hasMany(Driver, {
+  foreignKey: "owner_id", // an owner can own many drivers
+});
+
 Driver.hasMany(Auto, {
   foreignKey: "driver_id", // a person can be the primary driver of many vehicles
 });

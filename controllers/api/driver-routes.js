@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
+const multer = require("multer");
+const upload = require("../../public/javascript/image-upload");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to get all drivers
@@ -64,11 +66,13 @@ router.get("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to add a new driver
-router.post("/", withAuth, (req, res) => {
+router.post("/", upload.single("image"), (req, res) => {
+  console.log("REQ", req.body);
   Driver.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     relation: req.body.relation,
+    image_url: req.file.location,
   })
     .then((dbDriverData) => {
       // Commented out below for now until we set up a session login.
@@ -77,7 +81,9 @@ router.post("/", withAuth, (req, res) => {
         req.session.driver_id = dbDriverData.id;
         req.session.loggedIn = true;
 
-        res.json(dbDriverData);
+        // res.json(dbDriverData);
+        res.redirect("/driver");
+
       });
     })
     .catch((err) => {
