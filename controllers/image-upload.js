@@ -15,7 +15,11 @@ router.post("/image-upload", function (req, res) {
     }
     console.log("Uploaded!");
     //returning the url of the image that is stored on aws s3 bucket
-    return res.json({ imageUrl: req.file.location });
+    //  res.json({ image_url: req.file.location });
+    let image = res.send({ image_url: req.file.location });
+    // console.log(image);
+    return image
+
   });
 });
 

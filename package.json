@@ -21,7 +21,12 @@
   },
   "homepage": "https://github.com/p2T3/auto-tracker#readme",
   "dependencies": {
+<<<<<<< HEAD
     "aws-sdk": "^2.791.0",
+=======
+    "aws-sdk": "^2.789.0",
+    "axios": "^0.21.0",
+>>>>>>> 4f5401e728ad9f09ca0a6b54a30d87bb6c4ad9d4
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",

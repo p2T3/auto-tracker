@@ -1,6 +1,10 @@
 const router = require("express").Router();
-const withAuth = require( "../../utils/auth");
+const withAuth = require("../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
+const { response } = require("express");
+const upload = require("../../public/javascript/image-upload");
+const axios = require("axios");
+const singleUpload = upload.single("image");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to get all vehicles
@@ -81,17 +85,17 @@ router.post("/", withAuth, (req, res) => {
     insurance_expiration: req.body.insurance_expiration,
     oil_mileage: req.body.oil_mileage,
     tire_mileage: req.body.tire_mileage,
+    image_url: req.body.image_url,
   })
     .then((dbAutoData) => {
-
       req.session.save(() => {
-          req.session.id = dbAutoData.id;
-          req.session.loggedIn = true;
+        req.session.id = dbAutoData.id;
+        req.session.loggedIn = true;
 
-          res.json(dbAutoData);
+        res.json(dbAutoData);
       });
-
     })
+
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -101,21 +105,6 @@ router.post("/", withAuth, (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
 router.put("/:id", (req, res) => {
-  const upload = require("../../public/javascript/image-upload");
-
-  //'image' is the key name of our file input field in the html form
-  const singleUpload = upload.single("image");
-
-  singleUpload(req, res, function (err) {
-    if (err) {
-      return res.status(422).send({
-        errors: [{ title: "File Upload Error", detail: err.message }],
-      });
-    }
-    console.log("Uploaded!");
-    //returning the url of the image that is stored on aws s3 bucket
-    return res.json({ imageUrl: req.file.location });
-  });
   Auto.update(
     {
       owner_id: req.session.owner_id,
@@ -132,7 +121,7 @@ router.put("/:id", (req, res) => {
       insurance_expiration: req.body.insurance_expiration,
       oil_mileage: req.body.oil_mileage,
       tire_mileage: req.body.tire_mileage,
-      image_url: req.body.image_url,
+      
     },
     {
       where: {
