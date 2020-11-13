@@ -1,7 +1,7 @@
 {{!-- <!-- Modal For Adding a Car--> --}}
 <div class="modal fade" id="add-auto-modal" tabindex="-1" role="dialog" aria-labelledby="add-auto-modal-title"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog" role="document">
         <div class="modal-content card-color">
             <div class="modal-header">
                 <h1 class="modal-title" id="add-auto-modal-title">Add Vehicle</h1>
@@ -12,50 +12,61 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <form method="POST" class="upload-form" action="/api/autos" enctype="multipart/form-data">
+                        <form method="POST" class="upload-form row" action="/api/autos" enctype="multipart/form-data">
                             {{!-- add image form here --}}
-                            <div class="image-btn">
-                                <label>Select your vehicle image:</label>
+                            <div class="image-btn col-md-12 ml-auto justify-content-md-center ">
+                                <label>Select your vehicle image:</label> <br>
                                 <input type="file" name="image" />
                             </div>
-                            <label for="make" class="display-label">Make:</label>
-                            <input type="text" id="make" name="make" value="">
-                            <label for="model" class="display-label">Model:</label>
-                            <input type="text" id="model" name="model" value="">
-                            <label for="year" class="display-label">Year:</label>
-                            <input type="text" id="year" name="year" value="">
-                            <label for="color" class="display-label">Color:</label>
-                            <input type="text" id="color" name="color" value="">
-                            <label for="vin" class="display-label">VIN:</label>
-                            <input type="text" id="vin" name="vin" value="">
-                            <label for="license-plate" class="display-label">License Plate:</label>
-                            <input type="text" id="license-plate" name="license-plate" value="">
-                            <label for="tolltag-number" class="display-label">TollTag Number:</label>
-                            <input type="text" id="tolltag-number" name="tolltag-number" value="">
-                            <label for="insurance-expiration" class="display-label">Insurance Expiration:</label>
-                            <input type="text" id="insurance-expiration" name="insurance-expiration" value="">
-                            <label for="registration-expiration" class="display-label">Registration Expiration:</label>
-                            <input type="text" id="registration-expiration" name="registration-expiration" value="">
-                            <label for="purchase-mileage" class="display-label">Purchase Mileage:</label>
-                            <input type="text" id="purchase-mileage" name="purchase-mileage" value="">
-                            <label for="oil-change-mileage" class="display-label">Oil Change Mileage:</label>
-                            <input type="text" id="oil-change-mileage" name="oil-change-mileage" value="">
-                            <label for="tire-change-mileage" class="display-label">Tire Change Mileage: </label>
-                            <input type="text" id="tire-change-mileage" name="tire-change-mileage" value=""> <br>
-                            <label for="cars">Choose a Driver:</label>
-                            <select name="driver" id="driver">
-                                {{#each autos}}
-                                <option value='{{this.driver_id}}'>
-                                    {{this.driver.first_name}} {{this.driver.last_name}}</option>
-                                {{/each}}
-                            </select>
-                            <input type="submit" class="btn" id="add-vehicle" value="Add Vehicle" />
+                            <div class="col-md-6 ml-auto">
+                                <label for="make" class="display-label">Make:</label>
+                                <input type="text" id="make" name="make" value="">
+                                <label for="model" class="display-label">Model:</label>
+                                <input type="text" id="model" name="model" value="">
+                                <label for="year" class="display-label">Year:</label>
+                                <input type="text" id="year" name="year" value="">
+                                <label for="color" class="display-label">Color:</label>
+                                <input type="text" id="color" name="color" value="">
+                                <label for="vin" class="display-label">VIN:</label>
+                                <input type="text" id="vin" name="vin" value="">
+                                <label for="license-plate" class="display-label">License Plate:</label>
+                                <input type="text" id="license-plate" name="license-plate" value="">
+                            </div>
+                            <div class="col-md-6 ml-auto">
+                                <label for="tolltag-number" class="display-label">TollTag Number:</label>
+                                <input type="text" id="tolltag-number" name="tolltag-number" value="">
+                                <label for="insurance-expiration" class="display-label">Insurance Expiration:</label>
+                                <input type="text" id="insurance-expiration" name="insurance-expiration" value="">
+                                <label for="registration-expiration" class="display-label">Registration
+                                    Expiration:</label>
+                                <input type="text" id="registration-expiration" name="registration-expiration" value="">
+                                <label for="purchase-mileage" class="display-label">Purchase Mileage:</label>
+                                <input type="text" id="purchase-mileage" name="purchase-mileage" value="">
+                                <label for="oil-change-mileage" class="display-label">Oil Change Mileage:</label>
+                                <input type="text" id="oil-change-mileage" name="oil-change-mileage" value="">
+                                <label for="tire-change-mileage" class="display-label">Tire Change Mileage: </label>
+                                <input type="text" id="tire-change-mileage" name="tire-change-mileage" value="">
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 ml-auto">
+                                    <label for="Drivers">Choose a Driver:</label>
+                                    <select name="driver" id="driver">
+                                        {{#each autos}}
+                                        <option value='{{this.driver_id}}'>
+                                            {{this.driver.first_name}} {{this.driver.last_name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="col-md-6 ml-auto">
+                                    <input type="submit" class="btn" id="add-vehicle" value="Add Vehicle" />
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                {{!-- <div class="modal-footer">
+                </div> --}}
             </div>
         </div>
     </div>
