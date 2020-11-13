@@ -31,6 +31,12 @@ Auto.init(
     mileage: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      validate: {
+        min: {
+          args: 1,
+          msg: "This should be a positive number",
+        },
+      },
     },
     vin: {
       type: DataTypes.STRING,
@@ -55,10 +61,22 @@ Auto.init(
     oil_mileage: {
       type: DataTypes.INTEGER, // the mileage of the last oil change
       allowNull: false,
+      validate: {
+        min: {
+          args: 1,
+          msg: "This should be a positive number",
+        },
+      },
     },
     tire_mileage: {
       type: DataTypes.INTEGER, // the mileage of the last tire change
       allowNull: false,
+      validate: {
+        min: {
+          args: 1,
+          msg: "This should be a positive number",
+        },
+      },
     },
     image_url: {
       type: DataTypes.STRING,
