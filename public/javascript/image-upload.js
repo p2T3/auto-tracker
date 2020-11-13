@@ -23,10 +23,7 @@ const fileFilter = (req, file, cb) => {
   ) {
     cb(null, true);
   } else {
-    cb(
-      new Error("Invalid file type, only image files are allowed!"),
-      false
-    );
+    cb(new Error("Invalid file type, only image files are allowed!"), false);
   }
 };
 

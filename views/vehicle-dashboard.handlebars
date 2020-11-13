@@ -10,15 +10,15 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav nav nav-fill w-100">
                     <li class="nav-item">
-                    {{#if loggedIn}}
+                        {{#if loggedIn}}
                         <a class="nav-item nav-link" href="/driver">Driver Dashboard</a>
-                    {{/if}}
+                        {{/if}}
                     </li>
 
                     <li class="nav-item">
-                    {{#if loggedIn}}
+                        {{#if loggedIn}}
                         <a class="nav-item nav-link" href="/#" id="logout">Logout</a>
-                    {{/if}}
+                        {{/if}}
                     </li>
 
                 </ul>
@@ -34,24 +34,23 @@
 
 {{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
        Handle bars for the 'vehicle' dashboard page --}}
-<div class="container card-form">
-    <div class="row d-flex justify-content-md-center h-100">
+<div class="container-fluid card-form">
+    <div class="row d-flex justify-content-md-center ">
         {{#each autos}}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
+        <div class="col-sm-4 m-4 align-items-center card card-cursor overflow-auto" data-toggle="modal"
             {{!-- use this.id to know which modal was clicked and display the correct modal --}}
             data-target="#view-auto-modal-{{this.id}}">
-            <div class="card-header">
-                <h2>Vehicle: {{this.id}}</h2>
+            
+            <div class="card-header display-label">
+                <h2>{{this.make}} <span>{{this.model}}</span></h2>
             </div>
             <div class="card-body">
-                <img class="car-image" src="{{this.image_url}}"
-                    alt="">
-                <h4 class="display-label">Make: <span id="card-data">{{this.make}}</span></h4>
-                <h4 class="display-label">Model: <span id="card-data">{{this.model}}</span></h4>
-                <h4 class="display-label">Year: <span id="card-data">{{this.year}}</span></h4>
-                <h4 class="display-label">Driver: <span id="card-data">{{this.driver.first_name}}
-                        {{this.driver.last_name}}</span> </h4>
+                <img class="car-image img-responsive" src="{{this.image_url}}" alt="">
+                <div class="m-4 align-items-center">
+                    <h4 class="display-label"> Driver: <span id="card-data">{{this.driver.first_name}}
+                            {{this.driver.last_name}}</span> </h4>
+                </div>
             </div>
         </div>
         {{> view-vehicle-modal}}
@@ -62,3 +61,4 @@
 </div>
 
 <script src="/javascript/logout.js"></script>
+<script src="/javascript/modify-vehicle.js"></script>

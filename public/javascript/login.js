@@ -23,7 +23,7 @@ async function loginFormHandler(event) {
     // Check the response status
 
     if (response.ok) {
-      console.log("login response:", response)
+      console.log("login response:", response);
       document.location.replace("/vehicle");
     } else {
       alert(response.statusText);

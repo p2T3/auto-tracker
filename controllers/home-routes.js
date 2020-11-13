@@ -7,14 +7,14 @@ router.get("/", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  console.log("logged in:", req.session.loggedIn)
+  console.log("logged in:", req.session.loggedIn);
   if (req.session.loggedIn) {
-    res.redirect('/vehicle');
+    res.redirect("/vehicle");
     return;
   }
 
   res.render("login", {
-    loggedIn: true
+    loggedIn: true,
   });
 
   // res.render("login");
@@ -23,6 +23,5 @@ router.get("/login", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
-
 
 module.exports = router;

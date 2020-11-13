@@ -62,7 +62,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   width: 60%;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: rgb(65, 63, 63, 0.4) !important;
 }
 
 .card-color {
@@ -115,12 +115,18 @@ input:focus {
   width: 100%;
 }
 
-#btn-color, #add-driver, #add-vehicle, #save-vehicle {
+#btn-color,
+#add-driver,
+#add-vehicle,
+#save-vehicle {
   background-color: rgb(36, 36, 36);
   color: white;
 }
 
-#btn-color:hover, #add-driver:hover, #add-vehicle:hover, #save-vehicle:hover {
+#btn-color:hover,
+#add-driver:hover,
+#add-vehicle:hover,
+#save-vehicle:hover {
   background-color: grey;
 }
 
@@ -130,18 +136,32 @@ input:focus {
   padding: 5px;
 }
 
-.car-image {
-  width: 200px;
+.car-image, .driver-image {
+  width: 250px;
+  height: auto;
+
+}
+.modal-car-image {
+  width: 430px;
   height: auto;
 }
+.driver-image {
+  width: 150px;
+  height: auto;
 
-.upload-form, .image-btn {
-  font-size: 1rem;
 }
 
+.upload-form,
 .image-btn {
- margin: 5px;
- padding: 1px;
+  font-size: 1rem;
+  color: goldenrod;
+}
+
+.image-btn,
+#driver {
+  margin: 5px;
+  font-size: 1.2rem;
+  padding: 1px;
 }
 
 /* ------------------------------------------------------------------------------------------------------*/
@@ -161,10 +181,16 @@ input:focus {
     font-size: 25px;
   }
   .add-vehicle,
-  .add-driver {
+  .add-driver,
+  .card {
     width: 100%;
   }
   .display-data {
     display: block;
+  }
+  .modal-car-image,
+  .car-image {
+    width: 200px;
+    height: auto;
   }
 }

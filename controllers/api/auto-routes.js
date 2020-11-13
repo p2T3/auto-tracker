@@ -67,49 +67,43 @@ router.get("/:id", (req, res) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// Route to add an image to AWS S3 and get url back
+//Route to create a vehicle
 router.post("/", upload.single("image"), (req, res) => {
-  console.log("Add image Route", req.body);
-    console.log("REQ", req.body );
-    console.log("Uploaded!");
-    Auto.create({
-      owner_id: req.session.owner_id,
-      driver_id: req.body.driver,
-      make: req.body.make,
-      model: req.body.model,
-      color: req.body.color,
-      year: req.body.year,
-      mileage: req.body["purchase-mileage"],
-      vin: req.body.vin,
-      license_plate: req.body["license-plate"],
-      toll_tag: req.body["tolltag-number"],
-      registration_expiration: req.body["registration-expiration"],
-      insurance_expiration: req.body["insurance-expiration"],
-      oil_mileage: req.body["oil-change-mileage"],
-      tire_mileage: req.body["tire-change-mileage"],
-      image_url: req.file.location,
-      
-    })
-      .then((dbAutoData) => {
-        req.session.save(() => {
-          req.session.id = dbAutoData.id;
-          req.session.loggedIn = true;
+  Auto.create({
+    owner_id: req.session.owner_id,
+    driver_id: req.body.driver,
+    make: req.body.make,
+    model: req.body.model,
+    color: req.body.color,
+    year: req.body.year,
+    mileage: req.body["purchase-mileage"],
+    vin: req.body.vin,
+    license_plate: req.body["license-plate"],
+    toll_tag: req.body["tolltag-number"],
+    registration_expiration: req.body["registration-expiration"],
+    insurance_expiration: req.body["insurance-expiration"],
+    oil_mileage: req.body["oil-change-mileage"],
+    tire_mileage: req.body["tire-change-mileage"],
+    image_url: req.file.location,
+  })
+    .then((dbAutoData) => {
+      req.session.save(() => {
+        req.session.id = dbAutoData.id;
+        req.session.loggedIn = true;
 
-          res.redirect('/vehicle');
-          
-        });
-      })
-
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
+        res.redirect("/vehicle");
       });
-  // });
-}); 
+    })
+
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
-router.put("/:id", (req, res) => {
+router.put("/:id", upload.single("image"), (req, res) => {
   Auto.update(
     {
       owner_id: req.session.owner_id,

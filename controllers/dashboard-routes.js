@@ -7,7 +7,7 @@ const { Owner, Auto, Driver } = require("../models");
 router.get("/vehicle", (req, res) => {
   Auto.findAll({
     where: {
-      owner_id: req.session.owner_id 
+      owner_id: req.session.owner_id,
     },
     attributes: {
       exclude: ["createdAt", "updatedAt"],
@@ -15,7 +15,7 @@ router.get("/vehicle", (req, res) => {
     include: [
       {
         model: Driver,
-        attributes: ["id", "first_name", "last_name", "relation"],
+        attributes: ["id", "first_name", "last_name", "relation", "image_url"],
       },
     ],
   })
@@ -23,9 +23,9 @@ router.get("/vehicle", (req, res) => {
       // serialize data before passing to template
       const autos = dbAutoData.map((auto) => auto.get({ plain: true }));
 
-      console.log("AUTOS", autos);
+      // console.log("AUTOS", autos);
       // res.render("vehicle-dashboard", autos);
-      res.render('vehicle-dashboard', { autos, loggedIn: true });
+      res.render("vehicle-dashboard", { autos, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -36,26 +36,22 @@ router.get("/vehicle", (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////
 // Route for the 'driver' dashboard page.
 router.get("/driver", (req, res) => {
-  Auto.findAll({
+  Driver.findAll({
     where: {
-      owner_id: req.session.owner_id 
+      owner_id: req.session.owner_id,
     },
     attributes: {
       exclude: ["createdAt", "updatedAt"],
     },
-    include: [
-      {
-        model: Driver,
-        attributes: ["id", "first_name", "last_name", "relation"],
-      },
-    ],
   })
-    .then((dbAutoData) => {
+    .then((dbDriverData) => {
       // serialize data before passing to template
-      const drivers = dbAutoData.map((auto) => auto.get({ plain: true }));
+      const drivers = dbDriverData.map((driver) => driver.get({ plain: true }));
 
       // res.render("driver-dashboard", autos);
-      res.render('driver-dashboard', { drivers, loggedIn: true });
+      console.log("DRIVERS", drivers);
+      // console.log("DRIVER DATA", dbDriverData);
+      res.render("driver-dashboard", { drivers, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);

@@ -28,8 +28,9 @@ Driver.init(
         len: [1],
       },
     },
-    imageUrl: {
-      type: DataTypes.STRING
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
