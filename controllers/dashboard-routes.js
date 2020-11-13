@@ -5,6 +5,7 @@ const { Owner, Auto, Driver } = require("../models");
 //////////////////////////////////////////////////////////////////////////////////////
 // Route for the 'vehicle' dashboard page.
 router.get("/vehicle", (req, res) => {
+  console.log("VEHICLE - SESSION", req.session);
   Auto.findAll({
     where: {
       owner_id: req.session.owner_id 
