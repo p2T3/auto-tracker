@@ -69,6 +69,7 @@ router.get("/:id", (req, res) => {
 router.post("/", upload.single("image"), (req, res) => {
   console.log("REQ", req.body);
   Driver.create({
+    owner_id: req.session.owner_id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     relation: req.body.relation,
@@ -78,7 +79,7 @@ router.post("/", upload.single("image"), (req, res) => {
       // Commented out below for now until we set up a session login.
 
       req.session.save(() => {
-        req.session.driver_id = dbDriverData.id;
+        req.session.owner_id = dbDriverData.id;
         req.session.loggedIn = true;
 
         // res.json(dbDriverData);
