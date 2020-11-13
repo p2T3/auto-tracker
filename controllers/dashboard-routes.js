@@ -23,6 +23,7 @@ router.get("/vehicle", (req, res) => {
       // serialize data before passing to template
       const autos = dbAutoData.map((auto) => auto.get({ plain: true }));
 
+      console.log("AUTOS", autos);
       // res.render("vehicle-dashboard", autos);
       res.render('vehicle-dashboard', { autos, loggedIn: true });
     })
