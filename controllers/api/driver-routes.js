@@ -79,7 +79,7 @@ router.post("/", upload.single("image"), (req, res) => {
       // Commented out below for now until we set up a session login.
 
       req.session.save(() => {
-        req.session.owner_id = dbDriverData.id;
+        req.session.driver = dbDriverData.id;
         req.session.loggedIn = true;
 
         // res.json(dbDriverData);
