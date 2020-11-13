@@ -23,7 +23,7 @@ router.get("/vehicle", (req, res) => {
       // serialize data before passing to template
       const autos = dbAutoData.map((auto) => auto.get({ plain: true }));
 
-      console.log("AUTOS", autos);
+      // console.log("AUTOS", autos);
       // res.render("vehicle-dashboard", autos);
       res.render("vehicle-dashboard", { autos, loggedIn: true });
     })
@@ -43,18 +43,14 @@ router.get("/driver", (req, res) => {
     attributes: {
       exclude: ["createdAt", "updatedAt"],
     },
-    include: [
-      {
-        model: Auto,
-        attributes: ["id", "make", "model", "owner_id", "driver_id", "image_url"],
-      },
-    ],
   })
     .then((dbDriverData) => {
       // serialize data before passing to template
       const drivers = dbDriverData.map((driver) => driver.get({ plain: true }));
 
       // res.render("driver-dashboard", autos);
+      console.log("DRIVERS", drivers);
+      // console.log("DRIVER DATA", dbDriverData);
       res.render("driver-dashboard", { drivers, loggedIn: true });
     })
     .catch((err) => {

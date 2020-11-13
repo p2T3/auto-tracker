@@ -6,6 +6,10 @@ Auto.belongsTo(Owner, {
   foreignKey: "owner_id", // a vehicle has one owner
 });
 
+Driver.belongsTo(Owner, {
+  foreignKey: "owner_id", // a Driver has one owner
+});
+
 Auto.belongsTo(Driver, {
   foreignKey: "driver_id", // a vehicle has one primary driver
 });
