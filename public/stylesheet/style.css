@@ -115,12 +115,12 @@ input:focus {
   width: 100%;
 }
 
-#btn-color, #add-driver, #add-vehicle {
+#btn-color, #add-driver, #add-vehicle, #save-vehicle {
   background-color: rgb(36, 36, 36);
   color: white;
 }
 
-#btn-color:hover, #add-driver:hover, #add-vehicle:hover {
+#btn-color:hover, #add-driver:hover, #add-vehicle:hover, #save-vehicle:hover {
   background-color: grey;
 }
 
@@ -128,6 +128,20 @@ input:focus {
   text-decoration: none;
   color: white;
   padding: 5px;
+}
+
+.car-image {
+  width: 200px;
+  height: auto;
+}
+
+.upload-form, .image-btn {
+  font-size: 1rem;
+}
+
+.image-btn {
+ margin: 5px;
+ padding: 1px;
 }
 
 /* ------------------------------------------------------------------------------------------------------*/
@@ -140,8 +154,12 @@ input:focus {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: black;
+    font-size: 16px;
   }
 
+  .card-header h2 {
+    font-size: 25px;
+  }
   .add-vehicle,
   .add-driver {
     width: 100%;

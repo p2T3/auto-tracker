@@ -28,6 +28,9 @@ Driver.init(
         len: [1],
       },
     },
+    imageUrl: {
+      type: DataTypes.STRING
+    },
   },
   {
     sequelize,

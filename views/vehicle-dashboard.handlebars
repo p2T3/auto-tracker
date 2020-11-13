@@ -27,7 +27,6 @@
     </nav>
 </header>
 
-
 <div class="d-flex justify-content-md-center">
     <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
         data-target="#add-auto-modal">+ Add Vehicle</button>
@@ -38,7 +37,6 @@
 <div class="container card-form">
     <div class="row d-flex justify-content-md-center h-100">
         {{#each autos}}
-        {{log this}}
         {{#if this.id}}
         <div class="col-sm-4 m-4 align-items-center card card-cursor" data-toggle="modal"
             {{!-- use this.id to know which modal was clicked and display the correct modal --}}
@@ -47,7 +45,8 @@
                 <h2>Vehicle: {{this.id}}</h2>
             </div>
             <div class="card-body">
-                <img src="https://via.placeholder.com/150" alt="">
+                <img class="car-image" src="{{this.image_url}}"
+                    alt="">
                 <h4 class="display-label">Make: <span id="card-data">{{this.make}}</span></h4>
                 <h4 class="display-label">Model: <span id="card-data">{{this.model}}</span></h4>
                 <h4 class="display-label">Year: <span id="card-data">{{this.year}}</span></h4>
