@@ -105,43 +105,7 @@ router.post("/", upload.single("image"), (req, res) => {
         res.status(500).json(err);
       });
   // });
-});
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-// Route to add a new vehicle
-// router.post("/", withAuth, (req, res) => {
-//   console.log("Add vehicle Route");
-//   Auto.create({
-//     owner_id: req.session.owner_id,
-//     driver_id: req.body.driver_id,
-//     make: req.body.make,
-//     model: req.body.model,
-//     color: req.body.color,
-//     year: req.body.year,
-//     mileage: req.body.mileage,
-//     vin: req.body.vin,
-//     license_plate: req.body.license_plate,
-//     toll_tag: req.body.toll_tag,
-//     registration_expiration: req.body.registration_expiration,
-//     insurance_expiration: req.body.insurance_expiration,
-//     oil_mileage: req.body.oil_mileage,
-//     tire_mileage: req.body.tire_mileage,
-//     image_url: req.body.image_url,
-//   })
-//     .then((dbAutoData) => {
-//       req.session.save(() => {
-//         req.session.id = dbAutoData.id;
-//         req.session.loggedIn = true;
-
-//         res.json(dbAutoData);
-//       });
-//     })
-
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+}); 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
