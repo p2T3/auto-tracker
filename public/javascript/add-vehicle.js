@@ -1,5 +1,5 @@
 async function addVehicle(event) {
-//   event.preventDefault();
+  //   event.preventDefault();
 
   const make = document.querySelector('input[name="make"]').value.trim();
   const model = document.querySelector('input[name="model"]').value.trim();
@@ -49,13 +49,12 @@ async function addVehicle(event) {
       insurance_expiration,
       oil_mileage,
       tire_mileage,
-      driver_id
+      driver_id,
     }),
     headers: {
       "Content-Type": "application/json",
-      'Content-Type': 'multipart/form-data'
+      "Content-Type": "multipart/form-data",
     },
-    
   });
 
   if (response.ok) {

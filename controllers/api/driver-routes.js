@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const withAuth = require( "../../utils/auth");
+const withAuth = require("../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,10 +74,10 @@ router.post("/", withAuth, (req, res) => {
       // Commented out below for now until we set up a session login.
 
       req.session.save(() => {
-          req.session.driver_id = dbDriverData.id;
-          req.session.loggedIn = true;
+        req.session.driver_id = dbDriverData.id;
+        req.session.loggedIn = true;
 
-          res.json(dbDriverData);
+        res.json(dbDriverData);
       });
     })
     .catch((err) => {

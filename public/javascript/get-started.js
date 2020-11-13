@@ -1,10 +1,7 @@
 async function getStarted(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    document.location.replace("/signup");
+  document.location.replace("/signup");
 }
 
-
-document
-    .querySelector("#get-started")
-    .addEventListener("click", getStarted);
+document.querySelector("#get-started").addEventListener("click", getStarted);

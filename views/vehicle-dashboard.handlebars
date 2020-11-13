@@ -10,15 +10,15 @@
             <div class="collapse navbar-collapse" id="navbar1">
                 <ul class="navbar-nav nav nav-fill w-100">
                     <li class="nav-item">
-                    {{#if loggedIn}}
+                        {{#if loggedIn}}
                         <a class="nav-item nav-link" href="/driver">Driver Dashboard</a>
-                    {{/if}}
+                        {{/if}}
                     </li>
 
                     <li class="nav-item">
-                    {{#if loggedIn}}
+                        {{#if loggedIn}}
                         <a class="nav-item nav-link" href="/#" id="logout">Logout</a>
-                    {{/if}}
+                        {{/if}}
                     </li>
 
                 </ul>
@@ -45,8 +45,7 @@
                 <h2>Vehicle: {{this.id}}</h2>
             </div>
             <div class="card-body">
-                <img class="car-image" src="{{this.image_url}}"
-                    alt="">
+                <img class="car-image" src="{{this.image_url}}" alt="">
                 <h4 class="display-label">Make: <span id="card-data">{{this.make}}</span></h4>
                 <h4 class="display-label">Model: <span id="card-data">{{this.model}}</span></h4>
                 <h4 class="display-label">Year: <span id="card-data">{{this.year}}</span></h4>

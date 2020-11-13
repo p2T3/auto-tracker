@@ -1,9 +1,9 @@
 async function deleteVehicle(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    console.log(this.id);
+  console.log(this.id);
 }
 
 document
-    .querySelector("#delete-vehicle")
-    .addEventListener("click", deleteVehicle);
+  .querySelector("#delete-vehicle")
+  .addEventListener("click", deleteVehicle);

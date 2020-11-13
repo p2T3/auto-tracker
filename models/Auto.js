@@ -61,8 +61,8 @@ Auto.init(
       allowNull: false,
     },
     image_url: {
-      type: DataTypes.STRING
-    }
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

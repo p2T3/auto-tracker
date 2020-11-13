@@ -29,7 +29,7 @@ Driver.init(
       },
     },
     imageUrl: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
   },
   {

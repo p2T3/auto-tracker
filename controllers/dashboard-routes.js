@@ -7,7 +7,7 @@ const { Owner, Auto, Driver } = require("../models");
 router.get("/vehicle", (req, res) => {
   Auto.findAll({
     where: {
-      owner_id: req.session.owner_id 
+      owner_id: req.session.owner_id,
     },
     attributes: {
       exclude: ["createdAt", "updatedAt"],
@@ -25,7 +25,7 @@ router.get("/vehicle", (req, res) => {
 
       console.log("AUTOS", autos);
       // res.render("vehicle-dashboard", autos);
-      res.render('vehicle-dashboard', { autos, loggedIn: true });
+      res.render("vehicle-dashboard", { autos, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -38,7 +38,7 @@ router.get("/vehicle", (req, res) => {
 router.get("/driver", (req, res) => {
   Auto.findAll({
     where: {
-      owner_id: req.session.owner_id 
+      owner_id: req.session.owner_id,
     },
     attributes: {
       exclude: ["createdAt", "updatedAt"],
@@ -55,7 +55,7 @@ router.get("/driver", (req, res) => {
       const drivers = dbAutoData.map((auto) => auto.get({ plain: true }));
 
       // res.render("driver-dashboard", autos);
-      res.render('driver-dashboard', { drivers, loggedIn: true });
+      res.render("driver-dashboard", { drivers, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
