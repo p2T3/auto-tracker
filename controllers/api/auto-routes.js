@@ -72,7 +72,7 @@ router.get("/:id", (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //Route to create a vehicle
-router.post("/", upload.single("image"), (req, res) => {
+router.post("/", upload.single("image"), withAuth, (req, res) => {
   Auto.create({
     owner_id: req.session.owner_id,
     driver_id: req.body.driver,
@@ -163,7 +163,7 @@ router.delete("/:id", withAuth, (req, res) => {
         });
         return;
       }
-      res.json(dbAutoData);
+      res.redirect("/vehicle");
     })
     .catch((err) => {
       console.log(err);

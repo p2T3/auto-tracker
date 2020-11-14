@@ -80,13 +80,11 @@ router.post("/", upload.single("image"), (req, res) => {
     image_url: req.file.location,
   })
     .then((dbDriverData) => {
-      // Commented out below for now until we set up a session login.
 
       req.session.save(() => {
         req.session.driver = dbDriverData.id;
         req.session.loggedIn = true;
 
-        // res.json(dbDriverData);
         res.redirect("/driver");
 
       });
@@ -142,7 +140,7 @@ router.delete("/:id", withAuth, (req, res) => {
         });
         return;
       }
-      res.json(dbDriverData);
+      res.redirect("/driver");
     })
     .catch((err) => {
       console.log(err);
