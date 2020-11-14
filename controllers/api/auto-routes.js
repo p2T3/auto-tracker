@@ -2,12 +2,12 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
 const { response } = require("express");
-const multer = require("multer");
-const upload = require("../../public/javascript/image-upload");
 //this allows us to use a PUT method from HTML route, since html only
 //supports POST and GET. This will change the post to a PUT
 var methodOverride = require("method-override");
-// override a POST having ?_method=PUT
+const multer = require("multer");
+const upload = require("../../public/javascript/image-upload");
+// override with POST having ?_method=PI
 router.use(methodOverride("_method"));
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to get all vehicles
@@ -107,7 +107,8 @@ router.post("/", upload.single("image"), withAuth, (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", upload.single("image"), (req, res) => {
+  console.log("REQ", req.body);
   Auto.update(
     {
       owner_id: req.session.owner_id,
@@ -124,6 +125,7 @@ router.put("/:id", withAuth, (req, res) => {
       insurance_expiration: req.body["insurance-expiration"],
       oil_mileage: req.body["oil-change-mileage"],
       tire_mileage: req.body["tire-change-mileage"],
+      // image_url: req.file.location,
     },
     {
       where: {

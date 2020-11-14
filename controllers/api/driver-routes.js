@@ -8,7 +8,6 @@ const upload = require("../../public/javascript/image-upload");
 var methodOverride = require("method-override");
 // override a POST having ?_method=PUT
 router.use(methodOverride("_method"));
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to get all drivers
 router.get("/", (req, res) => {
