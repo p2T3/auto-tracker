@@ -2,9 +2,13 @@ const router = require("express").Router();
 const withAuth = require("../../utils/auth");
 const { Owner, Auto, Driver } = require("../../models");
 const { response } = require("express");
+//this allows us to use a PUT method from HTML route, since html only
+//supports POST and GET. This will change the post to a PUT
+var methodOverride = require("method-override");
 const multer = require("multer");
 const upload = require("../../public/javascript/image-upload");
-
+// override with POST having ?_method=PI
+router.use(methodOverride("_method"));
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to get all vehicles
 router.get("/", (req, res) => {
@@ -104,6 +108,7 @@ router.post("/", upload.single("image"), (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
 router.put("/:id", upload.single("image"), (req, res) => {
+  console.log("REQ", req.body);
   Auto.update(
     {
       owner_id: req.session.owner_id,
@@ -112,15 +117,15 @@ router.put("/:id", upload.single("image"), (req, res) => {
       model: req.body.model,
       color: req.body.color,
       year: req.body.year,
-      mileage: req.body.mileage,
+      mileage: req.body["purchase-mileage"],
       vin: req.body.vin,
-      license_plate: req.body.license_plate,
-      toll_tag: req.body.toll_tag,
-      registration_expiration: req.body.registration_expiration,
-      insurance_expiration: req.body.insurance_expiration,
-      oil_mileage: req.body.oil_mileage,
-      tire_mileage: req.body.tire_mileage,
-      image_url: req.body.image_url,
+      license_plate: req.body["license-plate"],
+      toll_tag: req.body["tolltag-number"],
+      registration_expiration: req.body["registration-expiration"],
+      insurance_expiration: req.body["insurance-expiration"],
+      oil_mileage: req.body["oil-change-mileage"],
+      tire_mileage: req.body["tire-change-mileage"],
+      // image_url: req.file.location,
     },
     {
       where: {
@@ -135,7 +140,7 @@ router.put("/:id", upload.single("image"), (req, res) => {
         });
         return;
       }
-      res.json(dbAutoData);
+      res.redirect("/vehicle");
     })
     .catch((err) => {
       console.log(err);

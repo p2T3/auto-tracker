@@ -12,31 +12,26 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <form method="PUT" class="upload-form row" action="/api/autos/{{this.id}}"
+                        <form method="POST" class="upload-form row" action="/api/autos/{{this.id}}?_method=PUT"
                             enctype="multipart/form-data">
-                            {{!-- add image form here --}}
-                            <div class="image-btn col-md-12 ml-auto justify-content-md-center ">
-                                <label>Select your Vehicle Image:</label> <br>
-                                <input type="file" name="image" required>
-                            </div>
                             <div class="col-md-6 ml-auto">
                                 <input type="text" id="insurance-expiration" name="insurance-expiration"
                                     placeholder="Insurance Expiration" required>
                                 <input type="text" id="registration-expiration" name="registration-expiration"
                                     placeholder="Registration Expiration" required>
                                 <input type="text" id="purchase-mileage" name="purchase-mileage"
-                                    placeholder="Purchase Mileage">
+                                    placeholder="Purchase Mileage" required>
                                 <input type="text" id="oil-change-mileage" name="oil-change-mileage"
-                                    placeholder="Oil Change Mileage">
+                                    placeholder="Oil Change Mileage" required>
                                 <input type="text" id="tire-change-mileage" name="tire-change-mileage"
-                                    placeholder="Tire Change Mileage">
-                            <div>
-                            </div>
-                            </div>
-                                <div class="col-md-6 ml-auto">
-                                    <input type="submit" class="btn" id="add-vehicle" value="Update Vehicle" />
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    placeholder="Tire Change Mileage" required>
+                                <div>
                                 </div>
+                            </div>
+                            <div class="col-md-6 ml-auto">
+                                <input type="submit" class="btn" id="add-vehicle" value="Update Vehicle" />
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
                         </form>
                     </div>
                 </div>
