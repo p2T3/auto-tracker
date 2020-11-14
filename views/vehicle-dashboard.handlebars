@@ -43,7 +43,6 @@
 
             <div class="card-header display-label">
                 <h2>{{this.make}} <span>{{this.model}}</span></h2>
-                <p class="modal-car-id">{{this.id}}</p>
             </div>
             <div class="card-body">
                 <img class="car-image img-responsive" src="{{this.image_url}}" alt="">
@@ -51,15 +50,16 @@
                     <h4 class="display-label"> Driver: <span id="card-data">{{this.driver.first_name}}
                             {{this.driver.last_name}}</span> </h4>
                 </div>
-                {{!-- use this.id to know which modal was clicked and display the correct modal --}}
             </div>
-                <div>
-                    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
-                        data-target="#update-auto-modal-{{this.id}}">+ Update Vehicle</button>
-                    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
-                        data-target="#view-auto-modal-{{this.id}}">+ Add Vehicle</button>
 
-                </div>
+            {{!-- use this.id to know which modal was clicked and display the correct modal --}}
+            <div class="row">
+                <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
+                    data-target="#update-auto-modal-{{this.id}}">+ Update Vehicle</button>
+                <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
+                    data-target="#view-auto-modal-{{this.id}}">+ Add Vehicle</button>
+                {{> delete-vehicle}}
+            </div>
         </div>
         {{> view-vehicle-modal}}
         {{> update-vehicle-modal}}

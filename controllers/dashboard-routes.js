@@ -48,9 +48,6 @@ router.get("/driver", (req, res) => {
       // serialize data before passing to template
       const drivers = dbDriverData.map((driver) => driver.get({ plain: true }));
 
-      // res.render("driver-dashboard", autos);
-      console.log("DRIVERS", drivers);
-      // console.log("DRIVER DATA", dbDriverData);
       res.render("driver-dashboard", { drivers, loggedIn: true });
     })
     .catch((err) => {
