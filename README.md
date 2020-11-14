@@ -35,11 +35,12 @@ Given a number of vehicles and a number of drives:
 * The NPM package mysql2.
 * The NPM package sequelize.
 * The NPM package connect-session-sequelize.
-* The NPM package dotenv.
-* The NPM package bcrypt.
-* The NPM package AWS SDK, Multer, Multer S3.
+* The NPM package dotenv (to hide environment variables).
+* The NPM package bcrypt (for password encryption).
+* The NPM package AWS SDK, Multer, Multer S3 (for image upload/retrieval).
 * The NPM JEST (for unit tests).
 * The bootstrap API.
+* The NPM methodOverride package (so we can Update & Delete from HTML forms).
 * The application images are stored on Amazon S3.
 * The application is deployed on Heroku: https://team-3-auto-tracker.herokuapp.com/
 
