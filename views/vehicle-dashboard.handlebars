@@ -36,14 +36,16 @@
        Handle bars for the 'vehicle' dashboard page --}}
 <div class="container-fluid card-form">
     <div class="row d-flex justify-content-md-center ">
+        
         {{#each autos}}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-center card card-cursor overflow-auto" data-toggle="modal"
+        <div id="vehicle-card" class="col-sm-4 m-4 align-items-center card card-cursor overflow-auto" data-toggle="modal"
             {{!-- use this.id to know which modal was clicked and display the correct modal --}}
             data-target="#view-auto-modal-{{this.id}}">
             
             <div class="card-header display-label">
                 <h2>{{this.make}} <span>{{this.model}}</span></h2>
+                <p class="modal-car-id">{{this.id}}</p>
             </div>
             <div class="card-body">
                 <img class="car-image img-responsive" src="{{this.image_url}}" alt="">
