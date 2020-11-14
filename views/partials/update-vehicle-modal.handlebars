@@ -10,11 +10,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <form method="POST" class="upload-form row" action="/api/autos/{{this.id}}?_method=PUT"
-                            enctype="multipart/form-data">
-                            <div class="col-md-6 ml-auto">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <form method="POST" id="update-form" class=""
+                            action="/api/autos/{{this.id}}?_method=PUT" enctype="multipart/form-data">
+                            <div class="col-md-10 justify-content-center ">
                                 <input type="text" id="insurance-expiration" name="insurance-expiration"
                                     placeholder="Insurance Expiration" required>
                                 <input type="text" id="registration-expiration" name="registration-expiration"
@@ -28,9 +28,16 @@
                                 <div>
                                 </div>
                             </div>
-                            <div class="col-md-6 ml-auto">
-                                <input type="submit" class="btn" id="add-vehicle" value="Update Vehicle" />
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <div class="row d-flex justify-content-space-around ">
+                                <div class="col-md- d-flex">
+                                    <div class="col-md-9 ">
+                                        <button type="submit" class="driver-label btn fal fa-wrench" id="update-vehicle"></button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <button type="button" class="driver-label fal fa-window-close btn btn-danger"
+                                            data-dismiss="modal"></button>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
