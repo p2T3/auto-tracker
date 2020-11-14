@@ -1,6 +1,6 @@
-<form method="POST" class="upload-form " action="/api/autos/{{this.id}}?_method=DELETE"
-            enctype="multipart/form-data">
-    <div class="col-md-6 ml-auto">
-        <input type="submit"  class="btn" id="add-vehicle" value="Delete Vehicle" />
-    </div>
-</form>
+<div class="col-md ml-auto">
+    <form method="POST" class="upload-form " action="/api/autos/{{this.id}}?_method=DELETE"
+        enctype="multipart/form-data">
+        <button type="submit" id="delete" class="display-label  btn btn-danger far fa-trash-alt"></button>
+    </form>
+</div>
