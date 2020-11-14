@@ -71,7 +71,6 @@ router.get("/:id", (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to add a new driver
 router.post("/", upload.single("image"), (req, res) => {
-  console.log("REQ", req.body);
   Driver.create({
     owner_id: req.session.owner_id,
     first_name: req.body.first_name,

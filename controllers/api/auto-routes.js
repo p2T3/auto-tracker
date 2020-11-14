@@ -108,7 +108,6 @@ router.post("/", upload.single("image"), withAuth, (req, res) => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Route to update one specific owner by ID
 router.put("/:id", upload.single("image"), (req, res) => {
-  console.log("REQ", req.body);
   Auto.update(
     {
       owner_id: req.session.owner_id,
