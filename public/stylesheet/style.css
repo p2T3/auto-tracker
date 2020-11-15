@@ -71,7 +71,8 @@ body {
   background-color: rgb(65, 63, 63) !important;
 }
 
-.display-label {
+.display-label,
+.modal-title {
   color: goldenrod;
   display: block;
 }
@@ -98,10 +99,6 @@ header,
 .card-header h3 {
   color: white;
   text-align: center;
-}
-
-.card-cursor:hover {
-  cursor: pointer;
 }
 
 .input-group-prepend span {
@@ -162,7 +159,9 @@ input:focus {
 }
 
 .upload-form,
-.image-btn {
+.image-btn,
+#add-vehicle,
+#add-driver {
   font-size: 1rem;
   color: goldenrod;
 }
@@ -206,5 +205,9 @@ input:focus {
   .car-image {
     width: 200px;
     height: auto;
+  }
+
+  #update-form {
+    margin-left: auto;
   }
 }

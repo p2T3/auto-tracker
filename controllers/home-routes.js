@@ -15,8 +15,6 @@ router.get("/login", (req, res) => {
   res.render("login", {
     loggedIn: true,
   });
-
-  // res.render("login");
 });
 
 router.get("/signup", (req, res) => {

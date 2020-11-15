@@ -79,13 +79,11 @@ router.post("/", upload.single("image"), (req, res) => {
     image_url: req.file.location,
   })
     .then((dbDriverData) => {
-
       req.session.save(() => {
         req.session.driver = dbDriverData.id;
         req.session.loggedIn = true;
 
         res.redirect("/driver");
-
       });
     })
     .catch((err) => {

@@ -29,7 +29,8 @@
 
 <div class="d-flex justify-content-md-center ">
     <button class="driver-label btn btn-dark btn-lg btn-rounded btn-elegant add-vehicle" data-toggle="modal"
-        data-target="#add-auto-modal"><i class="fal fa-plus-square"> Add  <i class="fal fa-cars"></i></i></button>
+        data-target="#add-auto-modal"><i class="fal fa-plus-square fa-lg"> Add <i
+                class="fal fa-cars fa-lg"></i></i></button>
 </div>
 
 {{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,18 +48,19 @@
             <div class="card-body">
                 <img class="car-image img-responsive" src="{{this.image_url}}" alt="">
                 <div class="m-4 align-items-center">
-                    <h4 class="driver-label fas fa-steering-wheel">  &nbsp <span id="card-data"> {{this.driver.first_name}}
+                    <h4 class="driver-label fas fa-steering-wheel"> &nbsp <span id="card-data">
+                            {{this.driver.first_name}}
                             {{this.driver.last_name}}</span></h4>
                 </div>
                 {{!-- use this.id to know which modal was clicked and display the correct modal --}}
                 <div class="row d-flex justify-content-md-center">
                     <div class="d-flex justify-content-md-space-around align-items-center">
                         <div class="col-md ml-auto justify-content-md-center">
-                            <button class=" driver-label btn btn-dark fal fa-wrench" data-toggle="modal"
+                            <button class=" driver-label btn btn-dark fal fa-wrench fa-lg" data-toggle="modal"
                                 data-target="#update-auto-modal-{{this.id}}"></button>
                         </div>
                         <div class="col-md ml-auto">
-                            <button class="driver-label btn btn-dark fal fa-eye" data-toggle="modal"
+                            <button class="driver-label btn btn-dark fal fa-eye fa-lg" data-toggle="modal"
                                 data-target="#view-auto-modal-{{this.id}}"></button>
                         </div>
                         {{> delete-vehicle}}
