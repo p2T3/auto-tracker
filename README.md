@@ -55,7 +55,7 @@ The URL to the GitHub repository: https://github.com/p2T3/auto-tracker
 The URL to the Heroku deployment: https://team-3-auto-tracker.herokuapp.com/ 
 
 ## Application Screen Shot
-![Auto-Tracker Image](./screen-capture1.jpg)
-![Auto-Tracker Image](./screen-capture2.jpg)
-![Auto-Tracker Image](./screen-capture3.jpg)
-![Auto-Tracker Image](./screen-capture4.jpg)
+![Auto-Tracker Image](./public/assets/images/screen-capture1.jpg)
+![Auto-Tracker Image](./public/assets/images/screen-capture2.jpg)
+![Auto-Tracker Image](./public/assets/images/screen-capture3.jpg)
+![Auto-Tracker Image](./public/assets/images/screen-capture4.jpg)
