@@ -90,30 +90,21 @@ router.post("/", (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // This is the login route
 router.post("/login", (req, res) => {
-  console.log("In login route");
-  console.log("req.body", req.body);
-  // Query operation to validate a user
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   Owner.findOne({
     where: {
       email: req.body.email,
     },
   }).then((dbOwnerData) => {
-    console.log("In owner.findOne.", dbOwnerData);
     if (!dbOwnerData) {
-      console.log("no owner");
       res.status(400).json({
         message: "No user with that email address!",
       });
       return;
     }
 
-    // Verify user by comparing passwords.  The database hashed password will be
-    // in 'dbUserData', while the plaintext (user entered) password will be in req.body.
     const validPassword = dbOwnerData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      console.log("bad password");
       res.status(400).json({
         message: "Incorrect password!",
       });
@@ -121,12 +112,9 @@ router.post("/login", (req, res) => {
     }
 
     req.session.save(() => {
-      // declare session variables
-      console.log(dbOwnerData);
       req.session.owner_id = dbOwnerData.id;
       req.session.email = dbOwnerData.email;
       req.session.loggedIn = true;
-      console.log("logged in");
       res.json({
         owner: dbOwnerData,
         message: "You are now logged in!",

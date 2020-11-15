@@ -20,10 +20,7 @@ async function loginFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
-    // Check the response status
-
     if (response.ok) {
-      console.log("login response:", response);
       document.location.replace("/vehicle");
     } else {
       alert(response.statusText);

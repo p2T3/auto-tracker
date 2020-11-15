@@ -18,15 +18,17 @@
                             <div class="col-md-12 ml-auto justify-content-md-center ">
                                 <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
                                 <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-                                <input type="text" id="relation" name="relation" placeholder="Relation to Owner" required>
+                                <input type="text" id="relation" name="relation" placeholder="Relation to Owner"
+                                    required>
                             </div>
                             <div class="image-btn col-md-12 ml-auto justify-content-md-center">
                                 <label>Select your Profile Image:</label> <br>
-                                <input type="file" name="image" />
+                                <input type="file" name="image" required/>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 ml-auto float-right">
-                                    <input type="submit" class="btn" id="add-driver" value="Add Driver">
+                                    <button type="submit" class="btn" id="add-driver"><i class="fal fa-plus-square"> Add
+                                            <i class="far fa-user-friends"></i></i></button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
@@ -37,5 +39,3 @@
         </div>
     </div>
 </div>
-
-<script src="javascript/add-driver.js"></script>

@@ -20,12 +20,27 @@ router.get("/vehicle", (req, res) => {
     ],
   })
     .then((dbAutoData) => {
-      // serialize data before passing to template
       const autos = dbAutoData.map((auto) => auto.get({ plain: true }));
 
-      // console.log("AUTOS", autos);
-      // res.render("vehicle-dashboard", autos);
-      res.render("vehicle-dashboard", { autos, loggedIn: true });
+      Driver.findAll({
+        where: {
+          owner_id: req.session.owner_id,
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+      })
+        .then((dbDriverData) => {
+          const drivers = dbDriverData.map((driver) =>
+            driver.get({ plain: true })
+          );
+
+          res.render("vehicle-dashboard", { autos, drivers, loggedIn: true });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
     })
     .catch((err) => {
       console.log(err);
@@ -48,9 +63,6 @@ router.get("/driver", (req, res) => {
       // serialize data before passing to template
       const drivers = dbDriverData.map((driver) => driver.get({ plain: true }));
 
-      // res.render("driver-dashboard", autos);
-      console.log("DRIVERS", drivers);
-      // console.log("DRIVER DATA", dbDriverData);
       res.render("driver-dashboard", { drivers, loggedIn: true });
     })
     .catch((err) => {

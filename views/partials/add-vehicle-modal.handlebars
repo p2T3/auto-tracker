@@ -45,15 +45,17 @@
                                 <div class="col-md-6 ml-auto">
                                     <label for="Drivers">Choose a Driver:</label>
                                     <select name="driver" id="driver">
-                                        {{#each autos}}
-                                        <option value='{{this.driver_id}}'>
-                                            {{this.driver.first_name}} {{this.driver.last_name}}</option>
+                                        {{#each drivers}}
+                                        <option value='{{this.id}}'>
+                                            {{this.first_name}} {{this.last_name}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
                                 <div class="col-md-6 ml-auto">
-                                    <input type="submit" class="btn" id="add-vehicle" value="Add Vehicle" />
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn" id="add-vehicle" value="Add Vehicle"><i
+                                            class="fal fa-plus-square fa-lg"> Add <i
+                                                class="fal fa-cars fa-lg"></i></i></button>
+                                    <button type="button" class="btn btn-danger " data-dismiss="modal">Cancel</button>
                                 </div>
                             </div>
                         </form>

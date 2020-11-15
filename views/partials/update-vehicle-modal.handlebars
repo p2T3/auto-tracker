@@ -1,0 +1,50 @@
+{{!-- <!-- Modal For Adding a Car--> --}}
+<div class="modal fade" id="update-auto-modal-{{this.id}}" tabindex="-1" role="dialog"
+    aria-labelledby="add-auto-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog" role="document">
+        <div class="modal-content card-color">
+            <div class="modal-header">
+                <h1 class="modal-title" id="add-auto-modal-title">Update {{this.make}} <span>{{this.model}}</span></h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid ">
+                    <div class="row ">
+                        <form method="POST" id="update-form" class="" action="/api/autos/{{this.id}}?_method=PUT"
+                            enctype="multipart/form-data">
+                            <div class="col-md-10 justify-content-center ">
+                                <input type="text" id="insurance-expiration" name="insurance-expiration"
+                                    placeholder="Insurance Expiration" required>
+                                <input type="text" id="registration-expiration" name="registration-expiration"
+                                    placeholder="Registration Expiration" required>
+                                <input type="text" id="purchase-mileage" name="purchase-mileage"
+                                    placeholder="Purchase Mileage" required>
+                                <input type="text" id="oil-change-mileage" name="oil-change-mileage"
+                                    placeholder="Oil Change Mileage" required>
+                                <input type="text" id="tire-change-mileage" name="tire-change-mileage"
+                                    placeholder="Tire Change Mileage" required>
+                                <div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-space-around ">
+                                <div class="col-md-9 d-flex">
+                                    <div class="col-md-9 ">
+                                        <button type="submit" class="driver-label btn fal fa-wrench fa-lg"
+                                            id="update-vehicle"></button>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <button type="button"
+                                            class="driver-label fal fa-window-close fa-lg btn btn-danger"
+                                            data-dismiss="modal"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

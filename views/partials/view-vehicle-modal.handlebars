@@ -3,7 +3,6 @@
 {{!-- this.id attaches unique id for each vehicle modal --}}
 <div class="modal fade" id="view-auto-modal-{{this.id}}" data-id="{{this.id}}" tabindex="-1" role="dialog"
     aria-labelledby="view-auto-modal-title" aria-hidden="true">
-
     <div class="modal-dialog modal-dialog-centered " role="document">
         <div class="modal-content card-color">
             <div class="modal-header">
@@ -17,7 +16,6 @@
                     <div class="row">
                         <div class="col-md-12 ml-auto"><img class="modal-car-image" src="{{this.image_url}}" alt="">
                         </div>
-
                         <div class="col-md-6 ml-auto">
                             <h5 class="display-label">Year: <span class="display-data">{{this.year}}</span></h5>
                             <h5 class="display-label">Color: <span class="display-data">{{this.color}}</span></h5>
@@ -28,8 +26,6 @@
                                     class="display-data">{{this.toll_tag}}</span></h5>
                         </div>
                         <div class="col-md-6 ml-auto">
-
-
                             <h5 class="display-label">Insurance Expires: <span
                                     class="display-data">{{this.insurance_expiration}}</span></h5>
                             <h5 class="display-label">Registration Expires: <span
@@ -46,11 +42,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                {{!-- <button type="button" data-id="{{this.id}}" class="btn" id="save-vehicle">Save changes</button> --}}
+
                 <button type="button" class="btn btn-danger" data-dismiss="modal" id="delete-vehicle">Close</button>
             </div>
         </div>
     </div>
 </div>
-
-<script src="/javascript/modify-vehicle.js"></script>

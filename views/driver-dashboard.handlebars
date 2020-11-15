@@ -25,18 +25,21 @@
 
 
 <div class="d-flex justify-content-md-center">
-    <button class="btn btn-dark btn-lg btn-rounded btn-elegant add-driver" data-toggle="modal"
-        data-target="#add-driver-modal">+ Add Driver</button>
+    <button class="driver-label btn btn-dark btn-lg btn-rounded btn-elegant add-driver" data-toggle="modal"
+        data-target="#add-driver-modal"><i class="fal fa-plus-square fa-lg"> Add <i
+                class="far fa-user-friends fa-lg"></i></i></button>
 </div>
 
 
 {{!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
        Handle bars for the 'driver' dashboard page --}}
-<div class="container card-form">
-    <div class="row d-flex justify-content-md-center h-100">
+<div class="container card-form ">
+    <div class="row d-flex justify-content-md-center ">
+
         {{#each drivers}}
         {{#if this.id}}
-        <div class="col-sm-4 m-4 align-items-left card ">
+        <div class="col-sm-4 m-4 align-items-center card card-cursor overflow-auto">
+
             <div class="card-header display-label">
                 <h2>{{this.first_name}}
                     {{this.last_name}}</h2>
@@ -44,7 +47,15 @@
             <div class="card-body">
                 <img class="driver-image img-responsive" src="{{this.image_url}}" alt="">
                 {{!-- <h4 class="display-label">Vehicle: <span id="card-data">{{autos.make}} {{autos.model}}</span></h4> --}}
-                <h4 class="display-label">Relation: <span id="card-data">{{this.relation}}</span></h4>
+                <h4 class="driver-label align-items-center">Relation: &nbsp<span id="card-data">{{this.relation}}</span>
+                </h4>
+
+                <div class="row d-flex justify-content-md-center">
+                    <div class="d-flex justify-content-md-space-around align-items-center">
+                        {{> delete-driver}}
+                    </div>
+                </div>
+
             </div>
         </div>
         {{/if}}
