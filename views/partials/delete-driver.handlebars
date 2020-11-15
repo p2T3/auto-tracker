@@ -1,6 +1,14 @@
-<div class="col-md ml-auto">
+{{!-- <div class="col-md ml-auto">
     <form method="POST" class="upload-form " action="/api/drivers/{{this.id}}?_method=DELETE"
         enctype="multipart/form-data">
         <input type="submit" class="btn" id="add-vehicle" value="Delete Driver" />
     </form>
+</div> --}}
+
+<div class="col-md ml-auto align-items-center">
+    <form method="POST" class="upload-form " action="/api/drivers/{{this.id}}?_method=DELETE"
+        enctype="multipart/form-data">
+        <button type="submit" class="driver-label btn btn-danger far fa-trash-alt" id="delete" />
+    </form>
 </div>
+
