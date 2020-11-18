@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/vehicle");
+      document.location.replace("/driver");
     } else {
       alert(response.statusText);
     }

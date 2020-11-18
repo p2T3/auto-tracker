@@ -21,7 +21,7 @@ async function signupFormHandler(event) {
     });
     // check the response status
     if (response.ok) {
-      document.location.replace("/vehicle");
+      document.location.replace("/driver");
     } else {
       alert(response.statusText);
     }
